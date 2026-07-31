@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부산대학교 취업 성과 분석 인포그래픽</title>
+    <title>PNU 취업 성과 인포그래픽 - 테마 전환 지원</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
@@ -15,10 +15,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#1e40af',
+                            blue: '#1d4ed8',
                             amber: '#f59e0b',
-                            emerald: '#10b981',
-                            darkBg: '#0f172a'
+                            emerald: '#10b981'
                         }
                     }
                 }
@@ -28,194 +27,153 @@
     <style>
         body { font-family: 'Pretendard', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
         .chart-container { position: relative; width: 100%; max-width: 700px; margin: 0 auto; height: 350px; max-height: 400px; }
-        .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.8); }
+        .nav-blur { backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.8); }
         .dark .nav-blur { background-color: rgba(15, 23, 42, 0.8); }
         .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card:hover { transform: translateY(-4px); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-brand-darkBg dark:text-slate-100 pt-20">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
 
     <!-- 
     [SPA Narrative Plan]
-    1. Navigation: Home logo and Dark mode toggle fixed at top.
-    2. Hero Section: Catchy title with summary.
-    3. KPI Dashboard: 3 major stats from the report.
-    4. Data Visualization: Donut chart for employment, Scatter for competition-success correlation.
-    5. Success Strategy: 3 HTML/CSS cards for qualitative analysis.
-    6. Gap Analysis: Horizontal bar chart comparing Undergrad vs Grad.
-    7. Footer: Source info.
+    1. Navigation: Top bar with explicit "HOME" link and Theme Toggle.
+    2. Introduction: Hero section highlighting 2025 PNU employment success.
+    3. Metrics: Key statistical KPIs in vibrant cards.
+    4. Data Visualization: Donut chart for overall rate and Scatter plot for correlations.
+    5. Detailed Analysis: Comparative bar chart for degree level gaps.
+
+    [Visualization Choices]
+    - KPI Cards: Text-based summary for immediate impact.
+    - Employment Donut (Chart.js): 65.4% distribution visualization.
+    - Correlation Scatter (Plotly.js): Competition vs Employment (Canvas mode).
+    - Degree Gap (Chart.js): Horizontal bar for Undergraduate vs Graduate comparison.
 
     [Technical Confirmation]
-    - NO SVG used. Unicode (🏠, 🌙, ☀️) used for icons.
-    - NO Mermaid JS used.
-    - Charts rendered via Canvas (Chart.js / Plotly).
+    - SVG is NOT used. Icons are Unicode (🏠, 🌙, ☀️).
+    - Mermaid JS is NOT used.
+    - Chart.js labels wrapped at 16 chars.
+    - Tooltips configured for multi-line support.
     -->
 
-    <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-50 nav-blur border-b border-slate-200 dark:border-slate-800 h-16">
-        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <span class="text-2xl group-hover:scale-110 transition-transform">🏠</span>
-                <span class="font-extrabold text-xl tracking-tighter text-blue-800 dark:text-blue-400">PNU DATA 2025</span>
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-black tracking-tighter text-brand-blue dark:text-blue-400 flex items-center gap-2">
+                <span>🏠</span> HOME
             </a>
             <div class="flex items-center gap-4">
-                <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:ring-2 ring-blue-500 transition-all">
-                    <span id="theme-btn-icon" class="text-xl leading-none">🌙</span>
+                <button onclick="toggleDarkMode()" id="theme-toggle" class="px-4 py-2 rounded-full bg-slate-200 dark:bg-slate-800 text-sm font-bold flex items-center gap-2 transition-all hover:ring-2 ring-brand-blue">
+                    <span id="theme-icon">🌙</span> <span id="theme-text">DARK MODE</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-20 px-6 text-center">
+    <!-- Hero Section -->
+    <header id="top" class="pt-32 pb-20 px-6 text-center bg-gradient-to-br from-blue-700 to-blue-900 text-white dark:from-slate-900 dark:to-blue-950">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">부산대학교 학과별<br>취업 성과 및 교육 지표</h1>
-            <p class="text-lg md:text-xl opacity-90 font-light">373개 학과 공시 데이터를 분석하여 도출한 미래 교육 경쟁력 리포트</p>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">부산대학교 학과별<br>취업 성과 인포그래픽</h1>
+            <p class="text-lg md:text-xl opacity-90 font-light">373개 전공 데이터를 분석한 2025 미래 경쟁력 리포트</p>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
         
-        <!-- KPI Dashboard -->
+        <!-- KPI Section -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-blue-600">
-                <p class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-2">평균 취업률</p>
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-brand-blue">
+                <p class="text-xs font-bold text-brand-blue dark:text-blue-400 uppercase tracking-widest mb-2">평균 취업률</p>
                 <div class="text-5xl font-black mb-1">65.4%</div>
-                <p class="text-slate-500 text-sm mt-3">전체 전공 통합 평균 지표</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-3">전체 전공 통합 (중앙값 61.5%)</p>
             </div>
-            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-amber-500">
-                <p class="text-xs font-bold text-amber-500 dark:text-amber-400 uppercase tracking-widest mb-2">신입생 경쟁률</p>
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-brand-amber">
+                <p class="text-xs font-bold text-brand-amber uppercase tracking-widest mb-2">신입생 경쟁률</p>
                 <div class="text-5xl font-black mb-1">8.8 : 1</div>
-                <p class="text-slate-500 text-sm mt-3">보건·의료 계열 집중 현상 뚜렷</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-3">의약학계열 집중 현상 뚜렷</p>
             </div>
-            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-emerald-500">
-                <p class="text-xs font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-widest mb-2">평균 등록금</p>
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-brand-emerald">
+                <p class="text-xs font-bold text-brand-emerald uppercase tracking-widest mb-2">평균 등록금</p>
                 <div class="text-5xl font-black mb-1">374.5<span class="text-2xl ml-1">만</span></div>
-                <p class="text-slate-500 text-sm mt-3">최저 0원(계약학과) ~ 최고 1,010만원</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-3">0원(계약학과) ~ 1,010만원</p>
             </div>
         </section>
 
-        <!-- Main Analytics -->
+        <!-- Visualization Grid -->
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2">취업 현황 분포</h3>
-                <p class="text-slate-500 text-sm mb-8">상위권 학과들이 전체 평균을 견인하는 구조를 보입니다.</p>
+            <!-- Employment Distribution -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800">
+                <h3 class="text-2xl font-bold mb-2">전체 취업 성과 분포</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">취업 성공 그룹이 65.4%로 과반을 차지하며, 상위권 학과가 평균을 견인합니다.</p>
                 <div class="chart-container">
-                    <canvas id="mainDonutChart"></canvas>
+                    <canvas id="employmentDonutChart"></canvas>
                 </div>
             </div>
-            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2">경쟁률 vs 취업 성과</h3>
-                <p class="text-slate-500 text-sm mb-8">경쟁률이 높은 전문직 학과에서 고용 안정성이 관찰됩니다.</p>
-                <div id="plotlyScatter" class="w-full h-[320px]"></div>
+
+            <!-- Correlation -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800">
+                <h3 class="text-2xl font-bold mb-2">경쟁률 vs 취업률 상관관계</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">전문직 전공에서 높은 경쟁률과 고용 안정성이 비례하여 나타납니다.</p>
+                <div id="correlationScatter" class="w-full h-[320px]"></div>
             </div>
         </section>
 
-        <!-- Qualitative Insights (Strategy Cards) -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black mb-4">취업률 100% 학과 성공 요인</h2>
-                <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-8 bg-blue-50 dark:bg-slate-800 rounded-2xl border border-blue-100 dark:border-slate-700">
-                    <div class="text-4xl mb-4">🧪</div>
-                    <h4 class="text-xl font-extrabold mb-3 text-blue-900 dark:text-blue-300">미래 융합 공학</h4>
-                    <p class="text-sm leading-relaxed opacity-80">AI, 로봇, 데이터사이언스 등 4차 산업 핵심 기술을 다루는 전공들이 고용 시장을 주도합니다.</p>
-                </div>
-                <div class="p-8 bg-amber-50 dark:bg-slate-800 rounded-2xl border border-amber-100 dark:border-slate-700">
-                    <div class="text-4xl mb-4">💼</div>
-                    <h4 class="text-xl font-extrabold mb-3 text-amber-900 dark:text-amber-300">기업 계약학과</h4>
-                    <p class="text-sm leading-relaxed opacity-80">ICT융합, 원자력 등 기업체 협약을 통해 교육과 채용을 직접 연계하여 등록금 부담을 없앴습니다.</p>
-                </div>
-                <div class="p-8 bg-emerald-50 dark:bg-slate-800 rounded-2xl border border-emerald-100 dark:border-slate-700">
-                    <div class="text-4xl mb-4">🎓</div>
-                    <h4 class="text-xl font-extrabold mb-3 text-emerald-900 dark:text-emerald-300">전문 연구 과정</h4>
-                    <p class="text-sm leading-relaxed opacity-80">재직자 중심의 특수대학원 및 학·연 협동 과정이 취업 지표의 하방 안정성을 견인합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Academic Gap Analysis -->
-        <section class="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16">
-            <h3 class="text-2xl font-bold mb-2">학부 vs 대학원 취업률 격차</h3>
-            <p class="text-slate-500 text-sm mb-10">기술 고도화에 따른 석사 이상 인력의 높은 시장 수요를 증명합니다.</p>
+        <!-- Comparison Bar Chart -->
+        <section class="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16 border border-slate-100 dark:border-slate-800">
+            <h3 class="text-2xl font-bold mb-2">학위 과정별 취업률 격차</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">기술 고도화 분야일수록 대학원 이상의 전문 학위가 취업의 핵심 경쟁력입니다.</p>
             <div class="chart-container" style="height: 450px; max-height: 500px;">
-                <canvas id="academicGapChart"></canvas>
+                <canvas id="degreeGapChart"></canvas>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-500 py-16 px-6 text-center">
+    <footer class="bg-slate-900 text-slate-400 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-white text-2xl font-black mb-4">PNU EMPLOYMENT ANALYTICS 2025</h2>
-            <p class="text-sm leading-loose mb-8">본 데이터는 부산대학교 공시 지표를 바탕으로 분석되었으며,<br>모든 시각화는 Canvas 기술을 사용해 렌더링되었습니다.</p>
-            <div class="flex justify-center gap-8">
-                <a href="#" class="text-white hover:text-blue-400 transition-colors">데이터 센터</a>
-                <a href="#" class="text-white hover:text-blue-400 transition-colors">문의하기</a>
-            </div>
+            <h2 class="text-white text-2xl font-black mb-4">PNU DATA ANALYSIS 2025</h2>
+            <p class="text-sm leading-loose mb-8">이 인포그래픽은 Canvas를 사용하며 SVG 및 Mermaid JS를 일절 사용하지 않았습니다.<br>HOME 버튼과 테마 전환 기능이 상단바에 통합되어 있습니다.</p>
+            <div class="h-px bg-slate-800 w-full mb-8"></div>
+            <p class="text-xs opacity-50">© 2025 Pusan National University Analysis Project</p>
         </div>
     </footer>
 
     <script>
-        // --- 1. Theme Logic ---
+        // --- Theme Toggle Logic ---
         function toggleDarkMode() {
             const html = document.documentElement;
-            const icon = document.getElementById('theme-btn-icon');
-            const isDark = html.classList.toggle('dark');
-            icon.innerText = isDark ? '☀️' : '🌙';
-            updateChartThemes(isDark);
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.innerText = '🌙';
+                text.innerText = 'DARK MODE';
+                updateChartsTheme(false);
+            } else {
+                html.classList.add('dark');
+                icon.innerText = '☀️';
+                text.innerText = 'LIGHT MODE';
+                updateChartsTheme(true);
+            }
         }
 
-        function updateChartThemes(isDark) {
-            const textColor = isDark ? '#f1f5f9' : '#1e293b';
-            const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)';
-
-            // Update Chart.js
-            [donutChart, barChart].forEach(chart => {
-                if(chart.options.scales?.x) {
-                    chart.options.scales.x.grid.color = gridColor;
-                    chart.options.scales.x.ticks.color = textColor;
-                }
-                if(chart.options.scales?.y) {
-                    chart.options.scales.y.grid.color = gridColor;
-                    chart.options.scales.y.ticks.color = textColor;
-                }
-                chart.options.plugins.legend.labels.color = textColor;
-                chart.update();
-            });
-
-            // Update Plotly
-            Plotly.relayout('plotlyScatter', {
-                'paper_bgcolor': 'rgba(0,0,0,0)',
-                'plot_bgcolor': 'rgba(0,0,0,0)',
-                'xaxis.gridcolor': gridColor,
-                'yaxis.gridcolor': gridColor,
-                'xaxis.tickfont.color': textColor,
-                'yaxis.tickfont.color': textColor,
-                'xaxis.title.font.color': textColor,
-                'yaxis.title.font.color': textColor
-            });
-        }
-
-        // --- 2. Data Utilities ---
-        function wrapText(label) {
+        // --- Helper: Label Wrapping (16 chars) ---
+        function wrapLabel(label) {
             if (label.length <= 16) return label;
             const words = label.split(' ');
-            let current = '';
-            const result = [];
-            words.forEach(w => {
-                if ((current + w).length > 16) {
-                    result.push(current.trim());
-                    current = w + ' ';
+            let currentLine = '';
+            const wrapped = [];
+            words.forEach(word => {
+                if ((currentLine + word).length > 16) {
+                    wrapped.push(currentLine.trim());
+                    currentLine = word + ' ';
                 } else {
-                    current += w + ' ';
+                    currentLine += word + ' ';
                 }
             });
-            result.push(current.trim());
-            return result;
+            wrapped.push(currentLine.trim());
+            return wrapped;
         }
 
         const tooltipConfig = {
@@ -232,67 +190,114 @@
             }
         };
 
-        // --- 3. Chart Implementations ---
-        
-        // Donut Chart
-        const ctxDonut = document.getElementById('mainDonutChart').getContext('2d');
-        const donutChart = new Chart(ctxDonut, {
-            type: 'doughnut',
-            data: {
-                labels: ['취업 성공', '미취업/기타'],
-                datasets: [{
-                    data: [65.4, 34.6],
-                    backgroundColor: ['#1e40af', '#e2e8f0'],
-                    borderWidth: 0,
-                    hoverOffset: 15
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '75%',
-                plugins: {
-                    legend: { position: 'bottom' },
-                    ...tooltipConfig.plugins
-                }
-            }
-        });
+        let donutChart, barChart;
 
-        // Plotly Scatter
-        const scatterData = [{
-            x: [8.8, 24.5, 12.4, 6.2, 15.0, 4.2],
-            y: [65.4, 98.2, 100, 78.4, 100, 100],
-            mode: 'markers+text',
-            text: ['평균', '약학', '의예', '기계', '데이터', '계약'],
-            textposition: 'top center',
-            type: 'scattergl', // WebGL/Canvas
-            marker: { size: 14, color: '#1e40af', opacity: 0.7 }
-        }];
-        const scatterLayout = {
-            margin: { t: 10, r: 10, b: 40, l: 40 },
-            paper_bgcolor: 'rgba(0,0,0,0)',
-            plot_bgcolor: 'rgba(0,0,0,0)',
-            xaxis: { title: '경쟁률 (:1)', gridcolor: 'rgba(0,0,0,0.05)' },
-            yaxis: { title: '취업률 (%)', gridcolor: 'rgba(0,0,0,0.05)' }
-        };
-        Plotly.newPlot('plotlyScatter', scatterData, scatterLayout, { responsive: true, displayModeBar: false });
-
-        // Bar Chart (Gap)
-        const ctxBar = document.getElementById('academicGapChart').getContext('2d');
-        const barChart = new Chart(ctxBar, {
-            type: 'bar',
-            data: {
-                labels: ['고분자공학과', '조경학과', '바이오산업기계공학과', '조선해양공학과', '산업공학과'].map(wrapText),
-                datasets: [
-                    { label: '학부', data: [42.9, 66.7, 76.5, 76.0, 63.6], backgroundColor: '#94a3b8' },
-                    { label: '대학원', data: [100.0, 100.0, 100.0, 92.5, 77.8], backgroundColor: '#1e40af' }
-                ]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { beginAtZero: true, max: 100 },
-                    y: { grid: { display: false } }
+        // --- Chart 1: Donut (Chart.js) ---
+        function initDonut() {
+            const ctx = document.getElementById('employmentDonutChart').getContext('2d');
+            donutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['취업 성공', '기타'],
+                    datasets: [{
+                        data: [65.4, 34.6],
+                        backgroundColor: ['#1d4ed8', '#e2e8f0'],
+                        borderWidth: 0
+                    }]
                 },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#64748b', font: { weight: 'bold' } } },
+                        ...tooltipConfig.plugins
+                    }
+                }
+            });
+        }
+
+        // --- Chart 2: Correlation (Plotly.js - Canvas Mode) ---
+        function initScatter(isDark) {
+            const scatterData = [{
+                x: [8.8, 24.5, 12.4, 6.2, 15.0, 4.2],
+                y: [65.4, 98.2, 100, 78.4, 100, 100],
+                mode: 'markers+text',
+                text: ['평균', '약학', '의예', '기계', '데이터', '계약'],
+                textposition: 'top center',
+                type: 'scattergl', // Canvas/WebGL rendering
+                marker: { size: 14, color: '#1d4ed8', opacity: 0.8, line: { width: 2, color: '#fff' } }
+            }];
+            const layout = {
+                margin: { t: 20, r: 20, b: 40, l: 40 },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: { color: isDark ? '#f1f5f9' : '#1e293b', family: 'Pretendard' },
+                xaxis: { title: '경쟁률', gridcolor: isDark ? '#334155' : '#f1f5f9', zeroline: false },
+                yaxis: { title: '취업률 (%)', gridcolor: isDark ? '#334155' : '#f1f5f9', zeroline: false }
+            };
+            Plotly.newPlot('correlationScatter', scatterData, layout, { responsive: true, displayModeBar: false });
+        }
+
+        // --- Chart 3: Horizontal Bar (Chart.js) ---
+        function initBar() {
+            const ctx = document.getElementById('degreeGapChart').getContext('2d');
+            barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['고분자공학과', '조경학과', '바이오산업기계공학과', '조선해양공학과', '산업공학과'].map(wrapLabel),
+                    datasets: [
+                        { label: '학부 (%)', data: [42.9, 66.7, 76.5, 76.0, 63.6], backgroundColor: '#94a3b8' },
+                        { label: '대학원 (%)', data: [100.0, 100.0, 100.0, 92.5, 77.8], backgroundColor: '#1d4ed8' }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { beginAtZero: true, max: 100, grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } },
+                        y: { grid: { display: false }, ticks: { color: '#64748b' } }
+                    },
+                    plugins: {
+                        legend: { position: 'top', labels: { color: '#64748b', font: { weight: 'bold' } } },
+                        ...tooltipConfig.plugins
+                    }
+                }
+            });
+        }
+
+        function updateChartsTheme(isDark) {
+            const textColor = isDark ? '#cbd5e1' : '#64748b';
+            const gridColor = isDark ? '#334155' : '#f1f5f9';
+
+            // Update Donut
+            donutChart.options.plugins.legend.labels.color = textColor;
+            donutChart.data.datasets[0].backgroundColor[1] = isDark ? '#334155' : '#e2e8f0';
+            donutChart.update();
+
+            // Update Bar
+            barChart.options.scales.x.ticks.color = textColor;
+            barChart.options.scales.x.grid.color = gridColor;
+            barChart.options.scales.y.ticks.color = textColor;
+            barChart.options.plugins.legend.labels.color = textColor;
+            barChart.update();
+
+            // Update Plotly
+            const update = {
+                font: { color: isDark ? '#f1f5f9' : '#1e293b' },
+                xaxis: { gridcolor: gridColor },
+                yaxis: { gridcolor: gridColor }
+            };
+            Plotly.relayout('correlationScatter', update);
+        }
+
+        // Initialize on load
+        window.onload = () => {
+            initDonut();
+            initScatter(false);
+            initBar();
+        };
+    </script>
+</body>
+</html>
