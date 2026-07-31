@@ -1,278 +1,241 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산대학교 취업 성과 및 교육 지표 인포그래픽</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Plotly.js CDN -->
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e40af',
+                            amber: '#f59e0b',
+                            emerald: '#10b981',
+                            darkBg: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Pretendard', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             height: 350px;
-            max-height: 450px;
+            max-height: 400px;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        .dark .nav-blur {
+            background-color: rgba(15, 23, 42, 0.8);
         }
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
         }
     </style>
 </head>
-<body class="p-0 m-0">
+<body class="bg-slate-50 text-slate-900 dark:bg-brand-darkBg dark:text-slate-100">
 
     <!-- 
-    [COLOR PALETTE SELECTION] 
-    Chosen Palette: "Energetic & Professional" (Brilliant Blue #1E40AF, Vibrant Amber #F59E0B, Emerald #10B981)
-    Consistent with vibrant and professional UI/UX requirements.
+    [SPA Narrative Plan]
+    1. Introduction: UI with navigation (Home, Dark mode toggle) and Hero section.
+    2. KPI Overview: 3 key metrics from the report.
+    3. Deep Dive Visuals: Correlation analysis and overall distribution.
+    4. Strategic Breakdown: Qualitative success factors (HTML/CSS blocks).
+    5. Comparison: Academic gap analysis (Undergrad vs Grad).
+    6. Conclusion: Footer with summary.
+
+    [Visualization Justification]
+    - Employment Rate: Donut Chart (Chart.js) -> Goal: Inform composition.
+    - Competition vs Success: Scatter Plot (Plotly/Canvas) -> Goal: Relationship.
+    - Academic Gap: Bar Chart (Chart.js) -> Goal: Categorical comparison.
+    - Success Strategies: Styled HTML/CSS Flex Grid -> Goal: Process/Organization.
+
+    [Technical Confirmation]
+    - NO SVG used (Unicode characters used for icons).
+    - NO Mermaid JS used.
     -->
 
-    <!-- 
-    [SYSTEM CONFIRMATION]
-    - NO SVG graphics were used in this file. All visual elements use HTML/CSS or Canvas.
-    - NO Mermaid JS was used for diagrams. All flows use structured CSS Grid/Flexbox.
-    -->
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="#" class="text-xl font-extrabold text-blue-700 dark:text-blue-400 flex items-center gap-2">
+                    <span>🏠</span>
+                    <span class="hidden sm:inline tracking-tight">PNU DATA 2025</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:ring-2 ring-blue-500 transition-all duration-300">
+                    <span id="theme-icon" class="text-lg leading-none">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-    <!-- 
-    [NARRATIVE PLAN]
-    1. Introduction: Contextualize the 2025 Pusan Univ data.
-    2. KPI Overview: Present 3 core metrics for immediate impact.
-    3. Distribution Analysis: Show the relationship between competition and employment.
-    4. Top 100% Analysis: Grouping the most successful departments.
-    5. Undergrad vs Grad Gap: Highlighting the specialized education effect.
-    6. Future Strategy: A visual roadmap for educational competitiveness.
-    -->
-
-    <!-- 
-    [VISUALIZATION MAPPING]
-    1. Overall Metrics -> Large Typography (Goal: Inform)
-    2. Employment Dist. -> Chart.js Donut (Goal: Inform)
-    3. Competition vs Employment -> Plotly Scatter (Canvas Mode) (Goal: Relationship)
-    4. Dept Gap -> Chart.js Horizontal Bar (Goal: Compare)
-    5. Success Categories -> HTML/CSS Cards with Unicode (Goal: Organize)
-    6. Strategic Roadmap -> HTML/CSS Structured Layout (Goal: Organize)
-    -->
-
-    <header class="gradient-bg text-white py-12 px-6 text-center">
-        <h1 class="text-3xl md:text-5xl font-extrabold mb-4">2025 부산대학교 취업 성과 분석</h1>
-        <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-            373개 학과의 교육 지표를 바탕으로 한 데이터 중심 학과 경쟁력 및 산업 연계 성과 분석 보고서
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-6 text-center bg-gradient-to-br from-blue-700 to-blue-900 text-white">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">PNU 취업 지표 데이터 리포트</h1>
+        <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-light leading-relaxed">
+            373개 학과 데이터를 기반으로 분석한 <br class="hidden md:block"> 부산대학교의 고용 경쟁력과 교육 성과 지표입니다.
         </p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
+    <main class="max-w-7xl mx-auto px-6 py-12">
         
-        <!-- SECTION: KPI Dashboard -->
-        <section class="mb-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-blue-600 text-center">
-                    <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">평균 취업률</span>
-                    <div class="text-5xl font-black mt-2 mb-1">65.4%</div>
-                    <p class="text-gray-500 text-sm">전체 373개 학과 평균</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-amber-500 text-center">
-                    <span class="text-sm font-semibold text-amber-500 uppercase tracking-wider">신입생 경쟁률</span>
-                    <div class="text-5xl font-black mt-2 mb-1">8.8 : 1</div>
-                    <p class="text-gray-500 text-sm">최고 약학부 24.5:1 기록</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-emerald-500 text-center">
-                    <span class="text-sm font-semibold text-emerald-500 uppercase tracking-wider">평균 등록금</span>
-                    <div class="text-5xl font-black mt-2 mb-1">374.5<span class="text-2xl">만</span></div>
-                    <p class="text-gray-500 text-sm">계약학과 0원 ~ 의학계열 1,010만</p>
-                </div>
+        <!-- KPI Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-blue-600">
+                <p class="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-2">평균 취업률</p>
+                <h2 class="text-5xl font-black tracking-tighter">65.4%</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-4 leading-snug">전체 373개 전공 통합 평균 지표</p>
             </div>
-            <div class="mt-8 bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <p class="text-blue-800 text-center font-medium">
-                    "취업률 100% 달성 학과는 주로 계약학과, 첨단 융합 전공, 재직자 중심 특수대학원에서 나타났습니다."
-                </p>
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-amber-500">
+                <p class="text-sm font-bold text-amber-500 dark:text-amber-400 uppercase tracking-widest mb-2">신입생 경쟁률</p>
+                <h2 class="text-5xl font-black tracking-tighter">8.8 : 1</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-4 leading-snug">약학·의예과 등 전문직 선호 뚜렷</p>
+            </div>
+            <div class="card bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-b-8 border-emerald-500">
+                <p class="text-sm font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-widest mb-2">평균 등록금</p>
+                <h2 class="text-5xl font-black tracking-tighter">374.5<span class="text-2xl ml-1">만</span></h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-4 leading-snug">연간 등록금 평균 (계약학과 0원 포함)</p>
             </div>
         </section>
 
-        <!-- SECTION: Distribution Analysis -->
-        <section class="mb-16">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 mb-2">주요 교육 지표 통계 분석</h2>
-                <p class="text-gray-600">취업률과 경쟁률의 분포를 통해 전공별 사회적 선호도와 실제 고용 성과를 비교 분석합니다.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-2xl card-shadow">
-                    <h3 class="text-lg font-bold mb-6 text-center">전체 학과 취업률 분포</h3>
-                    <div class="chart-container">
-                        <canvas id="employmentDonutChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-500">
-                        평균(65.4%)이 중앙값(61.5%)보다 높은 우측 편향 분포를 보이며 상위권 전공이 평균을 견인합니다.
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl card-shadow">
-                    <h3 class="text-lg font-bold mb-6 text-center">경쟁률 vs 취업률 상관관계</h3>
-                    <div id="scatterPlot" class="w-full h-[350px]"></div>
-                    <div class="mt-4 text-sm text-gray-500">
-                        전문직 선호 학과(의·약학)는 높은 경쟁률과 고취업률을 동시에 보이나, 계약학과는 경쟁률 대비 압도적 효율을 보입니다.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Top 100% Categories -->
-        <section class="mb-16">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 mb-2">취업률 100% 최상위권 학과 유형</h2>
-                <p class="text-gray-600">완전 고용을 달성한 학과들은 세 가지 핵심 구조적 전략을 보유하고 있습니다.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Group 1 -->
-                <div class="bg-blue-600 text-white p-8 rounded-2xl flex flex-col items-center text-center">
-                    <div class="text-5xl mb-4 font-serif">🌐</div>
-                    <h3 class="text-xl font-bold mb-3">첨단 기술 & 미래 융합</h3>
-                    <p class="text-sm opacity-90 mb-4 leading-relaxed">
-                        AI, 로봇, 데이터사이언스 등 4차 산업 핵심 기술 분야. 학부 데이터사이언스, 대학원 나노메카트로닉스 등.
-                    </p>
-                    <div class="mt-auto pt-4 border-t border-blue-400 w-full text-xs font-semibold">
-                        산업수요 대응형 교과 과정
-                    </div>
-                </div>
-                <!-- Group 2 -->
-                <div class="bg-amber-500 text-white p-8 rounded-2xl flex flex-col items-center text-center">
-                    <div class="text-5xl mb-4 font-serif">🤝</div>
-                    <h3 class="text-xl font-bold mb-3">기업 맞춤형 계약학과</h3>
-                    <p class="text-sm opacity-90 mb-4 leading-relaxed">
-                        ICT융합, 기계부품시스템 등 기업체 채용 연계형. 학비 부담 0원 및 전원 취업 보장 모델.
-                    </p>
-                    <div class="mt-auto pt-4 border-t border-amber-400 w-full text-xs font-semibold">
-                        입학이 곧 취업인 실속형
-                    </div>
-                </div>
-                <!-- Group 3 -->
-                <div class="bg-emerald-600 text-white p-8 rounded-2xl flex flex-col items-center text-center">
-                    <div class="text-5xl mb-4 font-serif">💼</div>
-                    <h3 class="text-xl font-bold mb-3">재직자 중심 전문 교육</h3>
-                    <p class="text-sm opacity-90 mb-4 leading-relaxed">
-                        교육·행정·경영대학원 야간 과정. 현업 재직자의 전문성 강화로 지표의 하방 안정성 견인.
-                    </p>
-                    <div class="mt-auto pt-4 border-t border-emerald-400 w-full text-xs font-semibold">
-                        고용 유지형 커리어 향상
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Undergrad vs Grad Gap -->
-        <section class="mb-16">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 mb-2">학부 vs 대학원 취업률 격차 진단</h2>
-                <p class="text-gray-600">공학 및 자연과학 계열에서 학위의 고도화가 취업 성공률에 미치는 영향을 분석합니다.</p>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl card-shadow overflow-hidden">
-                <h3 class="text-lg font-bold mb-8">주요 학과 과정별 취업률 비교</h3>
+        <!-- Main Visuals -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">취업률 분포 현황</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">상위권 학과들이 전체 평균을 견인하는 구조입니다.</p>
                 <div class="chart-container">
-                    <canvas id="gapBarChart"></canvas>
+                    <canvas id="employmentDonut"></canvas>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-blue-800 mb-2">📌 격차 발생 원인: R&D 수요</h4>
-                        <p class="text-sm text-gray-700 leading-relaxed">
-                            신소재, 첨단 제조 분야일수록 석·박사급 심화 연구 역량에 대한 선호도가 증가하며, 학·연 협동 과정을 통한 출연연 연계가 결정적입니다.
-                        </p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-blue-800 mb-2">📌 사례 연구: 고분자공학</h4>
-                        <p class="text-sm text-gray-700 leading-relaxed">
-                            학부(42.9%) 대비 대학원(100.0%)의 취업률 격차가 57.1%p에 달해 전문 학위의 고용 창출력이 가장 뚜렷하게 확인되었습니다.
-                        </p>
-                    </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">경쟁률 vs 취업 성과</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">경쟁률이 높을수록 전문직 진출 안정성이 높게 나타납니다.</p>
+                <div id="scatterPlot" class="w-full h-[320px]"></div>
+            </div>
+        </section>
+
+        <!-- Strategy Box (No SVG/Mermaid) -->
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-black mb-4">취업률 100% 학과의 성공 요인</h3>
+                <p class="text-slate-600 dark:text-slate-400">데이터가 증명하는 최상위권 전공의 세 가지 핵심 전략</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 dark:bg-slate-800 p-8 rounded-2xl border border-blue-100 dark:border-slate-700">
+                    <div class="text-4xl mb-4">🧬</div>
+                    <h4 class="text-xl font-extrabold mb-3 text-blue-800 dark:text-blue-300">첨단 융합 교육</h4>
+                    <p class="text-sm leading-relaxed opacity-80">AI, 데이터사이언스, 로봇공학 등 4차 산업 핵심 기술을 커리큘럼에 전면 배치하여 시장 수요에 대응합니다.</p>
+                </div>
+                <div class="bg-amber-50 dark:bg-slate-800 p-8 rounded-2xl border border-amber-100 dark:border-slate-700">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h4 class="text-xl font-extrabold mb-3 text-amber-800 dark:text-amber-300">산업체 계약학과</h4>
+                    <p class="text-sm leading-relaxed opacity-80">ICT융합, 원자력 등 기업체와 채용 연계 계약을 체결하여 등록금 부담을 없애고 전원 취업을 보장합니다.</p>
+                </div>
+                <div class="bg-emerald-50 dark:bg-slate-800 p-8 rounded-2xl border border-emerald-100 dark:border-slate-700">
+                    <div class="text-4xl mb-4">🔬</div>
+                    <h4 class="text-xl font-extrabold mb-3 text-emerald-800 dark:text-emerald-300">학·연 협동 과정</h4>
+                    <p class="text-sm leading-relaxed opacity-80">국가 출연 연구소와 연계한 전문 연구 인력 양성 과정을 통해 학술적 깊이와 고용 안정성을 동시에 확보합니다.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: Strategic Roadmap -->
-        <section class="mb-16">
-            <div class="mb-8 text-center">
-                <h2 class="text-3xl font-bold mb-4">미래 경쟁력 강화 3대 전략</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">데이터 분석 결과를 바탕으로 도출한 부산대학교의 지속 가능한 교육 경쟁력 로드맵입니다.</p>
-            </div>
-
-            <div class="relative flex flex-col md:flex-row justify-between items-stretch gap-4 px-4">
-                <!-- Strategy 1 -->
-                <div class="flex-1 bg-white border-2 border-blue-100 p-8 rounded-2xl relative">
-                    <div class="absolute -top-4 left-6 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Phase 01</div>
-                    <h3 class="text-xl font-bold mt-2 mb-4 text-blue-700">계약학과 모델 확산</h3>
-                    <ul class="text-sm text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="mr-2">■</span> 공학 위주에서 인문·사회 융합형 계약학과로 확대</li>
-                        <li class="flex items-start"><span class="mr-2">■</span> 산학협력을 통한 등록금 부담 완화 모델 보편화</li>
-                    </ul>
-                </div>
-                <!-- Arrow Divider (CSS only) -->
-                <div class="hidden md:flex items-center justify-center text-blue-300 text-3xl">➔</div>
-                <!-- Strategy 2 -->
-                <div class="flex-1 bg-white border-2 border-blue-100 p-8 rounded-2xl relative">
-                    <div class="absolute -top-4 left-6 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Phase 02</div>
-                    <h3 class="text-xl font-bold mt-2 mb-4 text-blue-700">학·석사 연계 강화</h3>
-                    <ul class="text-sm text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="mr-2">■</span> 취업 격차가 큰 학과 중심 패스트트랙 제공</li>
-                        <li class="flex items-start"><span class="mr-2">■</span> 국가출연연구소(ETRI, 기계연 등) 학연 협력 고도화</li>
-                    </ul>
-                </div>
-                <!-- Arrow Divider (CSS only) -->
-                <div class="hidden md:flex items-center justify-center text-blue-300 text-3xl">➔</div>
-                <!-- Strategy 3 -->
-                <div class="flex-1 bg-white border-2 border-blue-100 p-8 rounded-2xl relative">
-                    <div class="absolute -top-4 left-6 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Phase 03</div>
-                    <h3 class="text-xl font-bold mt-2 mb-4 text-blue-700">융합 전공 전면 개편</h3>
-                    <ul class="text-sm text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="mr-2">■</span> AI·데이터·로봇 교과목의 전공 간 경계 허물기</li>
-                        <li class="flex items-start"><span class="mr-2">■</span> 미래 산업 수요에 맞춘 유연한 학사 구조 도입</li>
-                    </ul>
-                </div>
+        <!-- Gap Analysis -->
+        <section class="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16">
+            <h3 class="text-2xl font-bold mb-2">학부 vs 대학원 취업률 격차</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">전문 학위의 가치가 가장 높은 상위 5개 학과 지표입니다.</p>
+            <div class="chart-container" style="max-height: 500px; height: 450px;">
+                <canvas id="gapChart"></canvas>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-                <h2 class="text-white text-xl font-bold mb-4">부산대학교 학과별 취업 성과 분석 리포트</h2>
-                <p class="text-sm">본 데이터는 2025년 기준 공식 지표를 바탕으로 시각화되었으며, 전문성과 연계성이 미래 대학 경쟁력의 핵심임을 입증하고 있습니다.</p>
-            </div>
-            <div class="text-right text-xs">
-                &copy; 2025 Data Analysis Unit. All Rights Reserved. <br>
-                Rendered with Chart.js & Plotly.js (Canvas/WebGL Mode)
+    <footer class="bg-slate-900 text-slate-500 py-16 px-6 text-center border-t border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-white text-2xl font-black mb-4 tracking-tighter">PNU EMPLOYMENT ANALYSIS 2025</h2>
+            <p class="text-sm mb-8 leading-loose">본 리포트는 부산대학교 373개 학과의 공시 데이터를 바탕으로 분석되었습니다.<br>데이터 시각화 도구: Chart.js, Plotly.js (Canvas Rendering)</p>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="text-white hover:text-blue-400 transition-colors">홈으로</a>
+                <span class="opacity-20">|</span>
+                <a href="#" class="text-white hover:text-blue-400 transition-colors">데이터 출처</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Label Wrapping Utility (aiming for ~16 chars)
+        // --- Theme Management ---
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            const isDark = html.classList.toggle('dark');
+            
+            icon.innerText = isDark ? '☀️' : '🌙';
+            updateChartsTheme(isDark);
+        }
+
+        function updateChartsTheme(isDark) {
+            const textColor = isDark ? '#f1f5f9' : '#1e293b';
+            const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)';
+
+            // Update Chart.js Defaults
+            Chart.defaults.color = textColor;
+            
+            [donutChart, gapChart].forEach(chart => {
+                if(chart.options.scales?.x) {
+                    chart.options.scales.x.grid.color = gridColor;
+                    chart.options.scales.x.ticks.color = textColor;
+                }
+                if(chart.options.scales?.y) {
+                    chart.options.scales.y.grid.color = gridColor;
+                    chart.options.scales.y.ticks.color = textColor;
+                }
+                chart.options.plugins.legend.labels.color = textColor;
+                chart.update();
+            });
+
+            // Update Plotly
+            Plotly.relayout('scatterPlot', {
+                'paper_bgcolor': 'rgba(0,0,0,0)',
+                'plot_bgcolor': 'rgba(0,0,0,0)',
+                'xaxis.gridcolor': gridColor,
+                'yaxis.gridcolor': gridColor,
+                'xaxis.tickfont.color': textColor,
+                'yaxis.tickfont.color': textColor,
+                'xaxis.title.font.color': textColor,
+                'yaxis.title.font.color': textColor
+            });
+        }
+
+        // --- Data Handling ---
         function wrapLabel(label) {
             if (label.length <= 16) return label;
             const words = label.split(' ');
             let currentLine = '';
             const lines = [];
-            
             words.forEach(word => {
                 if ((currentLine + word).length > 16) {
                     lines.push(currentLine.trim());
@@ -285,32 +248,27 @@
             return lines;
         }
 
-        // Shared Tooltip Callback Config
         const tooltipConfig = {
             callbacks: {
                 title: function(tooltipItems) {
                     const item = tooltipItems[0];
                     let label = item.chart.data.labels[item.dataIndex];
-                    if (Array.isArray(label)) {
-                        return label.join(' ');
-                    } else {
-                        return label;
-                    }
+                    return Array.isArray(label) ? label.join(' ') : label;
                 }
             }
         };
 
-        // 1. Employment Donut Chart (Inform)
-        const ctxDonut = document.getElementById('employmentDonutChart').getContext('2d');
-        new Chart(ctxDonut, {
+        // --- Visual 1: Donut Chart ---
+        const ctxDonut = document.getElementById('employmentDonut').getContext('2d');
+        const donutChart = new Chart(ctxDonut, {
             type: 'doughnut',
             data: {
-                labels: ['평균 취업률', '미취업 및 기타'],
+                labels: ['취업 성공', '미취업 및 기타'],
                 datasets: [{
                     data: [65.4, 34.6],
                     backgroundColor: ['#1e40af', '#e2e8f0'],
                     borderWidth: 0,
-                    hoverOffset: 4
+                    hoverOffset: 10
                 }]
             },
             options: {
@@ -324,58 +282,36 @@
             }
         });
 
-        // 2. Correlation Plotly Scatter (Relationship)
-        // Using Canvas rendering for Plotly
-        const scatterData = [
-            {
-                x: [8.8, 24.5, 12.4, 6.2, 7.5, 15.0, 4.2],
-                y: [65.4, 98.2, 100, 78.4, 95.0, 100, 100],
-                mode: 'markers+text',
-                type: 'scattergl', // Use WebGL/Canvas rendering
-                text: ['평균', '약학부', '의예과', '기계공학', '테크노MBA', '데이터사이언스', '계약학과'],
-                textposition: 'top center',
-                marker: { 
-                    size: 15, 
-                    color: ['#64748b', '#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'],
-                    opacity: 0.8
-                }
-            }
-        ];
+        // --- Visual 2: Scatter Plot (Plotly) ---
+        const scatterTrace = {
+            x: [8.8, 24.5, 12.4, 6.2, 15.0, 4.2],
+            y: [65.4, 98.2, 100, 78.4, 100, 100],
+            mode: 'markers+text',
+            type: 'scattergl', // Use WebGL/Canvas
+            text: ['전체평균', '약학부', '의예과', '기계공학', '데이터사이언스', '계약학과'],
+            textposition: 'top center',
+            marker: { size: 14, color: '#1e40af', opacity: 0.8 },
+            name: '학과별 지표'
+        };
         const scatterLayout = {
-            margin: { t: 10, r: 10, l: 40, b: 40 },
-            xaxis: { title: '경쟁률 (:1)', gridcolor: '#f1f5f9' },
-            yaxis: { title: '취업률 (%)', gridcolor: '#f1f5f9' },
+            margin: { t: 10, r: 10, b: 40, l: 40 },
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: { title: '신입생 경쟁률 (:1)', gridcolor: 'rgba(0,0,0,0.05)' },
+            yaxis: { title: '취업률 (%)', gridcolor: 'rgba(0,0,0,0.05)' },
             showlegend: false
         };
-        Plotly.newPlot('scatterPlot', scatterData, scatterLayout, { responsive: true, displayModeBar: false });
+        Plotly.newPlot('scatterPlot', [scatterTrace], scatterLayout, { responsive: true, displayModeBar: false });
 
-        // 3. Undergrad vs Grad Gap Chart (Comparison)
-        const ctxGap = document.getElementById('gapBarChart').getContext('2d');
-        const gapLabels = [
-            '고분자공학과', 
-            '조경학과', 
-            '바이오산업기계공학과', 
-            '조선·해양공학과', 
-            '산업공학과'
-        ].map(wrapLabel);
-
-        new Chart(ctxGap, {
+        // --- Visual 3: Academic Gap Bar Chart ---
+        const ctxGap = document.getElementById('gapChart').getContext('2d');
+        const gapChart = new Chart(ctxGap, {
             type: 'bar',
             data: {
-                labels: gapLabels,
+                labels: ['고분자공학과', '조경학과', '바이오산업기계공학과', '조선해양공학과', '산업공학과'].map(wrapLabel),
                 datasets: [
-                    {
-                        label: '학부 취업률',
-                        data: [42.9, 66.7, 76.5, 76.0, 63.6],
-                        backgroundColor: '#94a3b8'
-                    },
-                    {
-                        label: '대학원 취업률',
-                        data: [100.0, 100.0, 100.0, 92.5, 77.8],
-                        backgroundColor: '#1e40af'
-                    }
+                    { label: '학부', data: [42.9, 66.7, 76.5, 76.0, 63.6], backgroundColor: '#94a3b8' },
+                    { label: '대학원', data: [100.0, 100.0, 100.0, 92.5, 77.8], backgroundColor: '#1e40af' }
                 ]
             },
             options: {
@@ -383,7 +319,7 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 scales: {
-                    x: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } },
+                    x: { beginAtZero: true, max: 100, title: { display: true, text: '취업률 (%)' } },
                     y: { grid: { display: false } }
                 },
                 plugins: {
