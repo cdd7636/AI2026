@@ -335,10 +335,10 @@
                         <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#트렌드</span>
                         <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#데이터시각화</span>
                     </div>
-                    <button onclick="openModal('modal-career-data')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-600 text-slate-700 dark:text-slate-200 font-medium text-xs transition-all flex items-center justify-center gap-2">
+                    <a href="./data2/index.html" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-600 text-slate-700 dark:text-slate-200 font-medium text-xs transition-all flex items-center justify-center gap-2">
                         <span>인터랙티브 차트 보기</span>
                         <i class="fa-solid fa-chart-pie text-[10px]"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -606,36 +606,6 @@
                     <div class="font-bold text-purple-500 mb-1">Cut 3. 결말</div>
                     <p class="text-slate-600 dark:text-slate-300">학생의 아이디어와 AI의 연산 능력이 결합되어 완성된 해양 정화 시스템</p>
                 </div>
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">닫기</button>
-            </div>
-        </div>
-
-        <!-- MODAL 3: 진로 데이터 분석 -->
-        <div id="modal-career-data" class="modal-content hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-3xl rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl relative">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div class="flex items-center gap-3 text-cyan-500 text-xs font-bold mb-2">
-                <i class="fa-solid fa-chart-line"></i> 모듈 03 · 데이터 시각화 분석
-            </div>
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white mb-2">AI 직무 시장 수요 & 핵심 스킬 변화 데이터</h2>
-            <p class="text-xs text-slate-500 mb-6">워크넷 및 고용노동부 공공 데이터 기반 직무 트렌드 분석 결과</p>
-
-            <!-- Chart Canvas Container -->
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 mb-6">
-                <div class="h-64">
-                    <canvas id="careerDemandChart"></canvas>
-                </div>
-            </div>
-
-            <div class="p-4 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-100 dark:border-cyan-900/50 text-xs text-slate-700 dark:text-slate-300 space-y-2">
-                <p class="font-bold text-cyan-900 dark:text-cyan-200">🔍 주요 데이터 시사점</p>
-                <p>1. 단순히 코딩 능력만 갖춘 개발자보다 <strong>AI 모델을 비즈니스 문제와 결합하는 'AI 서비스 기획자'</strong>의 채용 공고 성장률이 전년 대비 +42% 증가함.</p>
-                <p>2. 프롬프트 엔지니어링, 데이터 정제, 윤리적 판단 능력이 공통 요구 역량 Top 3로 부상함.</p>
             </div>
 
             <div class="mt-6 flex justify-end">
