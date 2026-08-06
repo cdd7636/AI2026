@@ -575,11 +575,11 @@
                         <span
                             class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#시민편의</span>
                     </div>
-                    <button onclick="openModal('modal-public-app')"
+                    <a href="./festival01/index.html"
                         class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-rose-600 hover:text-white dark:hover:bg-rose-600 text-slate-700 dark:text-slate-200 font-medium text-xs transition-all flex items-center justify-center gap-2">
                         <span>공공데이터 앱 실행</span>
                         <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -910,67 +910,6 @@
                     <span id="simResultStatus"
                         class="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600 font-bold">매우 혼잡 - 3교시 이용
                         권장</span>
-                </div>
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button onclick="closeModal()"
-                    class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">닫기</button>
-            </div>
-        </div>
-
-        <!-- MODAL 7: 공공데이터 앱 -->
-        <div id="modal-public-app"
-            class="modal-content hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-3xl rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl relative">
-            <button onclick="closeModal()"
-                class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="flex items-center gap-3 text-rose-500 text-xs font-bold mb-2">
-                <i class="fa-solid fa-database"></i> 모듈 07 · 공공 API 활용 앱
-            </div>
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white mb-2">우리 동네 미세먼지 & 무더위 쉼터 AI 알리미</h2>
-            <p class="text-xs text-slate-500 mb-6">환경부 대기오염 공공 API 데이터 세트 응용 시뮬레이션</p>
-
-            <!-- Interactive Public Data Search Table -->
-            <div
-                class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-3">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">지역별 실시간 데이터 조회</span>
-                    <span class="text-[11px] text-slate-400">데이터 연동 상태: 정상</span>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs">
-                        <thead class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                            <tr>
-                                <th class="p-2.5 rounded-l-lg">지역명</th>
-                                <th class="p-2.5">미세먼지 (PM10)</th>
-                                <th class="p-2.5">초미세먼지 (PM2.5)</th>
-                                <th class="p-2.5 rounded-r-lg">AI 권장 사항</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-                            <tr>
-                                <td class="p-2.5 font-bold">부산 해운대구</td>
-                                <td class="p-2.5 text-emerald-500 font-bold">24 ㎛/m³ (좋음)</td>
-                                <td class="p-2.5 text-emerald-500 font-bold">12 ㎛/m³</td>
-                                <td class="p-2.5">야외 활동 적합 🏃‍♂️</td>
-                            </tr>
-                            <tr>
-                                <td class="p-2.5 font-bold">부산 진구</td>
-                                <td class="p-2.5 text-amber-500 font-bold">62 ㎛/m³ (보통)</td>
-                                <td class="p-2.5 text-amber-500 font-bold">28 ㎛/m³</td>
-                                <td class="p-2.5">민감군 마스크 착용 😷</td>
-                            </tr>
-                            <tr>
-                                <td class="p-2.5 font-bold">부산 사상구</td>
-                                <td class="p-2.5 text-rose-500 font-bold">95 ㎛/m³ (나쁨)</td>
-                                <td class="p-2.5 text-rose-500 font-bold">51 ㎛/m³</td>
-                                <td class="p-2.5">실내 무더위 쉼터 이용 권장 🏢</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
