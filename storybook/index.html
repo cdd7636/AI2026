@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지호의 성장 스토리 | 뮤직비디오</title>
+    <title>지호의 성장 스토리 | 뮤직비디오 (9:16)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -87,7 +87,7 @@
         }
 
         .glow-effect {
-            box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.35);
         }
         .timeline-line::before {
             content: '';
@@ -118,14 +118,19 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #475569;
         }
+
+        /* Smartphone Frame Mockup Style */
+        .mobile-frame-glow {
+            box-shadow: 0 20px 50px -10px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white custom-scrollbar">
 
     <!-- Top Navigation Header -->
     <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Home Link Button (Updated to navigate to ../index.html) -->
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <!-- Home Link Button -->
             <a href="../index.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-brand-600 text-slate-200 hover:text-white transition-all duration-300 border border-slate-700/50 hover:border-brand-500 shadow-sm group cursor-pointer">
                 <i class="fa-solid fa-house text-sm group-hover:scale-110 transition-transform"></i>
                 <span class="font-medium text-xs sm:text-sm">홈으로</span>
@@ -133,104 +138,103 @@
 
             <!-- Page Title -->
             <div class="text-center">
-                <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-brand-400 block">Growth Story MV</span>
-                <h1 class="text-sm sm:text-lg font-bold text-white tracking-tight">지호의 꿈과 도전 스토리</h1>
+                <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-brand-400 block">Vertical Shorts MV (9:16)</span>
+                <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">지호의 꿈과 도전 스토리</h1>
             </div>
 
-            <!-- Controls: Dark/Light Mode Toggle & Quick Stats -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Dark / Light Mode Toggle Button -->
+            <!-- Dark / Light Mode Toggle Button -->
+            <div class="flex items-center gap-2">
                 <button id="themeToggleBtn" onclick="toggleTheme()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 transition-all duration-300 border border-slate-700/80 shadow-sm cursor-pointer" title="다크/라이트 모드 전환">
                     <i id="themeIcon" class="fa-solid fa-sun text-sm"></i>
                     <span id="themeText" class="text-xs font-semibold hidden sm:inline text-slate-200">라이트 모드</span>
                 </button>
-
-                <div class="hidden sm:flex items-center gap-2 text-xs text-slate-400">
-                    <span class="px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700/80 flex items-center gap-1.5">
-                        <i class="fa-solid fa-clapperboard text-brand-400"></i> 5개 클립
-                    </span>
-                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content Container -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 space-y-12">
 
-        <!-- Hero Section: Video Player -->
-        <section class="space-y-4">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
+        <!-- Hero Section: 9:16 Vertical Video Player Container -->
+        <section class="space-y-6 flex flex-col items-center">
+            <div class="text-center max-w-lg mx-auto space-y-2">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold">
                     <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                    공학자를 꿈꾸는 17살 지호의 이야기
+                    9:16 세로형 쇼츠 뮤직비디오
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    뮤직비디오 상영관
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    지호의 성장 스토리
                 </h2>
-                <p class="text-xs sm:text-base text-slate-400">
-                    "mv.mp4" 비디오를 바로 재생하거나, 하단의 빠른 바로가기 버튼을 이용해 특정 장면으로 이동할 수 있습니다.
+                <p class="text-xs sm:text-sm text-slate-400">
+                    "mv.mp4" 9:16 세로 영상을 확인하세요. 아래 컨트롤로 특정 장면으로 바로 이동할 수 있습니다.
                 </p>
             </div>
 
-            <!-- Video Container -->
-            <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden glass-panel p-2 sm:p-3 glow-effect">
-                <div class="relative aspect-video rounded-xl overflow-hidden bg-slate-950 group">
+            <!-- 9:16 Smartphone Mockup Frame & Video Player Container -->
+            <div class="w-full max-w-[340px] sm:max-w-[380px] rounded-[2.5rem] bg-slate-900 p-3 sm:p-4 border-4 border-slate-700/60 mobile-frame-glow relative transition-all">
+                
+                <!-- Phone Camera Notch Mockup -->
+                <div class="w-28 h-4 bg-slate-950 rounded-b-xl mx-auto absolute top-3 left-1/2 -translate-x-1/2 z-40 flex items-center justify-center">
+                    <div class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700/50"></div>
+                </div>
+
+                <!-- 9:16 Aspect Ratio Canvas/Video Wrapper -->
+                <div class="relative w-full aspect-[9/16] rounded-[1.8rem] overflow-hidden bg-slate-950 group shadow-inner">
                     
-                    <!-- Direct Video Player for mv.mp4 -->
-                    <video id="mainVideo" class="w-full h-full object-cover block" controls preload="auto" poster="https://placehold.co/1280x720/0f172a/ffffff?text=17살+지호의+성장+스토리+MV+(mv.mp4)">
+                    <!-- Direct Video Player for mv.mp4 (9:16 Vertical) -->
+                    <video id="mainVideo" class="w-full h-full object-cover block" controls preload="auto" poster="https://placehold.co/720x1280/0f172a/ffffff?text=17살+지호의+성장+스토리+MV+(9:16)">
                         <source src="mv.mp4" type="video/mp4">
                         브라우저가 비디오 태그를 지원하지 않습니다.
                     </video>
 
-                    <!-- Interactive Storyboard Canvas Player (Fallback & Synchronized Overlay View) -->
-                    <div id="canvasPlayerContainer" class="relative w-full h-full hidden flex-col justify-between bg-slate-900 select-none">
+                    <!-- Interactive Storyboard Canvas Player (9:16 Fallback & Simulated View) -->
+                    <div id="canvasPlayerContainer" class="relative w-full h-full hidden flex-col justify-between bg-slate-950 select-none">
                         <canvas id="storyCanvas" class="w-full h-full absolute inset-0 object-cover"></canvas>
                         
-                        <!-- Overlay Narrative Caption -->
-                        <div class="relative z-10 p-4 sm:p-6 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent mt-auto flex flex-col gap-2">
+                        <!-- Overlay Narrative Caption for 9:16 View -->
+                        <div class="relative z-10 p-4 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent mt-auto flex flex-col gap-2 pt-12">
                             <div class="flex items-center justify-between">
-                                <span id="currentSceneTag" class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white font-bold text-xs uppercase tracking-wider">
+                                <span id="currentSceneTag" class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white font-bold text-[11px] uppercase tracking-wider">
                                     장면 1: 고민과 방황
                                 </span>
-                                <span id="timeDisplay" class="text-xs font-mono text-slate-300 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700">00:00 / 01:40</span>
+                                <span id="timeDisplay" class="text-[10px] font-mono text-slate-300 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700">00:00 / 01:40</span>
                             </div>
-                            <p id="captionText" class="text-xs sm:text-sm md:text-base font-medium text-slate-100 line-clamp-2 drop-shadow-md">
+                            <p id="captionText" class="text-xs font-medium text-slate-100 leading-snug line-clamp-3 drop-shadow-md">
                                 "수학, 프로그래밍, 그리고 반도체... 정답 없는 질문들 속에서, 17살 지호의 고민은 깊어만 갔습니다."
                             </p>
                         </div>
 
                         <!-- Player Simulation Controls Overlay -->
                         <div class="absolute inset-0 z-20 flex items-center justify-center bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button id="simPlayBtn" onclick="toggleSimPlay()" class="w-16 h-16 rounded-full bg-brand-600/90 hover:bg-brand-500 text-white flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                            <button id="simPlayBtn" onclick="toggleSimPlay()" class="w-14 h-14 rounded-full bg-brand-600/90 hover:bg-brand-500 text-white flex items-center justify-center text-xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
                                 <i class="fa-solid fa-play ml-1" id="playIcon"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Audio TTS / Mode Switch Control Button -->
-                    <div class="absolute top-3 right-3 z-30 flex items-center gap-2">
-                        <button onclick="togglePlayerMode()" title="캔버스 시뮬레이터 / 영상 모드 전환" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-brand-600 text-white border border-slate-700/60 transition shadow-lg flex items-center gap-1.5 text-xs cursor-pointer">
+                    <!-- Top Floating Action Buttons inside Phone Container -->
+                    <div class="absolute top-6 right-3 z-30 flex flex-col gap-2">
+                        <button onclick="togglePlayerMode()" title="캔버스 시뮬레이터 / 영상 모드 전환" class="w-9 h-9 rounded-full bg-slate-900/80 hover:bg-brand-600 text-white border border-slate-700/60 transition shadow-lg flex items-center justify-center text-xs cursor-pointer">
                             <i class="fa-solid fa-sliders text-brand-400"></i>
-                            <span class="hidden sm:inline" id="modeToggleLabel">시뮬레이터 전환</span>
                         </button>
-                        <button onclick="speakCurrentCaption()" title="나레이션 음성으로 듣기" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-brand-600 text-white border border-slate-700/60 transition shadow-lg flex items-center gap-1.5 text-xs cursor-pointer">
+                        <button onclick="speakCurrentCaption()" title="나레이션 음성으로 듣기" class="w-9 h-9 rounded-full bg-slate-900/80 hover:bg-brand-600 text-white border border-slate-700/60 transition shadow-lg flex items-center justify-center text-xs cursor-pointer">
                             <i class="fa-solid fa-volume-high text-brand-400 group-hover:text-white" id="speakerIcon"></i>
-                            <span class="hidden sm:inline">음성 듣기</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Video Quick Jump Buttons -->
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 px-2 text-xs">
-                    <span class="text-slate-400 font-medium flex items-center gap-1.5">
-                        <i class="fa-solid fa-list-ol text-brand-500"></i>장면 빠른 바로가기:
-                    </span>
-                    <div class="flex flex-wrap items-center gap-1.5">
-                        <button onclick="jumpToScene(1)" class="scene-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50" data-scene="1">1. 방황 (0s)</button>
-                        <button onclick="jumpToScene(2)" class="scene-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50" data-scene="2">2. 도전 (20s)</button>
-                        <button onclick="jumpToScene(3)" class="scene-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50" data-scene="3">3. 시행착오 (40s)</button>
-                        <button onclick="jumpToScene(4)" class="scene-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50" data-scene="4">4. 융합 (60s)</button>
-                        <button onclick="jumpToScene(5)" class="scene-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50" data-scene="5">5. 다짐 (80s)</button>
+                <!-- Scene Jump Buttons Tailored for Vertical Layout -->
+                <div class="mt-3 pt-3 border-t border-slate-800 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 px-1 font-semibold">
+                        <span><i class="fa-solid fa-clapperboard text-brand-400 mr-1"></i>장면 탐색</span>
+                        <span class="text-brand-400" id="modeToggleLabelText">영상 재생 중</span>
+                    </div>
+                    <div class="grid grid-cols-5 gap-1 text-[11px]">
+                        <button onclick="jumpToScene(1)" class="scene-btn py-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50 text-center font-medium" data-scene="1">1.방황</button>
+                        <button onclick="jumpToScene(2)" class="scene-btn py-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50 text-center font-medium" data-scene="2">2.도전</button>
+                        <button onclick="jumpToScene(3)" class="scene-btn py-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50 text-center font-medium" data-scene="3">3.시련</button>
+                        <button onclick="jumpToScene(4)" class="scene-btn py-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50 text-center font-medium" data-scene="4">4.융합</button>
+                        <button onclick="jumpToScene(5)" class="scene-btn py-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white transition cursor-pointer border border-slate-700/50 text-center font-medium" data-scene="5">5.다짐</button>
                     </div>
                 </div>
             </div>
@@ -238,18 +242,18 @@
 
         <!-- Story Breakdown Section -->
         <section class="space-y-8 pt-6">
-            <div class="border-b border-slate-800 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                 <div>
                     <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
                         <i class="fa-solid fa-book-open text-brand-500"></i>
-                        스토리 시나리오 & 장면 연출 (5개 클립 / 10장 구성)
+                        스토리 시나리오 & 장면 연출
                     </h3>
                     <p class="text-slate-400 text-xs sm:text-sm mt-1">
-                        각 영상에 매칭된 나레이션과 연출 이미지를 순서대로 정리했습니다.
+                        9:16 쇼츠 영상의 각 타임라인별 나레이션과 연출 이미지를 확인하세요.
                     </p>
                 </div>
-                <div class="text-xs text-slate-400 bg-slate-900/90 border border-slate-800 px-3 py-2 rounded-xl flex items-center gap-2">
-                    <span class="text-brand-400 font-semibold">💡 연출 팁:</span> 2장의 이미지가 페이드(Fade) 전환되며 나레이션이 진행됩니다.
+                <div class="text-xs text-slate-400 bg-slate-900/90 border border-slate-800 px-3 py-2 rounded-xl flex items-center gap-2 self-start sm:self-auto">
+                    <span class="text-brand-400 font-semibold">💡 팁:</span> 장면 버튼 클릭 시 해당 영상 위치로 이동합니다.
                 </div>
             </div>
 
@@ -263,27 +267,27 @@
                     </div>
 
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-14 md:pl-0">
-                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-brand-500 hover:border-brand-400 transition shadow-lg">
+                        <div class="glass-panel p-5 sm:p-6 rounded-2xl border-l-4 border-l-brand-500 hover:border-brand-400 transition shadow-lg">
                             <div class="flex items-center gap-2 mb-2 md:justify-end">
                                 <span class="px-2.5 py-0.5 rounded-full bg-brand-500/20 text-brand-400 text-xs font-semibold">영상 클립 1</span>
-                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>장면 1 (00:00~00:20)</span>
+                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>00:00~00:20</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2 md:justify-end">
+                            <h4 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2 md:justify-end">
                                 1. 고민과 방황
                                 <button onclick="playSceneAudio(1)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-brand-600 text-brand-400 hover:text-white transition text-xs" title="나레이션 듣기">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </button>
                             </h4>
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed mb-4 italic">
+                            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed mb-4 italic">
                                 "수학, 프로그래밍, 그리고 반도체... 정답 없는 질문들 속에서, 17살 지호의 고민은 깊어만 갔습니다."
                             </div>
                             <div class="flex flex-wrap gap-2 text-xs md:justify-end">
                                 <button onclick="openImageModal('image_10.png', '책상 앞의 지호', '밤, 책상에서 심오한 고민에 빠진 지호의 모습')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-brand-400"></i> image_10.png (책상 앞 지호)
+                                    <i class="fa-regular fa-image text-brand-400"></i> image_10.png
                                 </button>
                                 <span class="text-slate-500 self-center">→</span>
                                 <button onclick="openImageModal('image_11.png', '첫 코딩 시작', '두근거리는 마음으로 코딩을 시작하는 지호')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-brand-400"></i> image_11.png (첫 코딩 시작)
+                                    <i class="fa-regular fa-image text-brand-400"></i> image_11.png
                                 </button>
                             </div>
                         </div>
@@ -293,19 +297,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div onclick="openImageModal('image_10.png', '책상 앞의 지호', '밤, 책상에서 고민하는 지호')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-brand-500/50 transition">
-                                    <i class="fa-solid fa-moon text-3xl text-brand-400 mb-1"></i>
+                                    <i class="fa-solid fa-moon text-2xl text-brand-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #1</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_10.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">밤, 책상에서 고민하는 지호</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">책상 앞 지호</p>
                             </div>
                             <div onclick="openImageModal('image_11.png', '첫 코딩 시작', '설레며 코딩을 터치하는 지호')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-brand-500/50 transition">
-                                    <i class="fa-solid fa-laptop-code text-3xl text-brand-400 mb-1"></i>
+                                    <i class="fa-solid fa-laptop-code text-2xl text-brand-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #2</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_11.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">설레며 코딩하는 지호</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">첫 코딩 시작</p>
                             </div>
                         </div>
                     </div>
@@ -318,27 +322,27 @@
                     </div>
 
                     <div class="w-full md:w-1/2 md:pl-12 pl-14">
-                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-indigo-500 hover:border-indigo-400 transition shadow-lg">
+                        <div class="glass-panel p-5 sm:p-6 rounded-2xl border-l-4 border-l-indigo-500 hover:border-indigo-400 transition shadow-lg">
                             <div class="flex items-center gap-2 mb-2">
                                 <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-semibold">영상 클립 2</span>
-                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>장면 2 (00:20~00:40)</span>
+                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>00:20~00:40</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                                2. 웹사이트와 새로운 도전
+                            <h4 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
+                                2. 새로운 도전
                                 <button onclick="playSceneAudio(2)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-indigo-600 text-indigo-400 hover:text-white transition text-xs" title="나레이션 듣기">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </button>
                             </h4>
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed mb-4 italic">
+                            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed mb-4 italic">
                                 "하지만 고민 대신 직접 발을 내디뎌보기로 했습니다. 까만 화면 위 적어 내려간 한 줄의 코드가 현실이 되는 순간, 지호의 가슴도 두근거리기 시작했습니다."
                             </div>
                             <div class="flex flex-wrap gap-2 text-xs">
                                 <button onclick="openImageModal('image_12.png', '반도체 연구', '반도체 칩 구조와 원리를 집중 탐구하는 지호')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-indigo-400"></i> image_12.png (반도체 연구)
+                                    <i class="fa-regular fa-image text-indigo-400"></i> image_12.png
                                 </button>
                                 <span class="text-slate-500 self-center">→</span>
                                 <button onclick="openImageModal('image_13.png', '화학 실험', '화학 반응 및 물질 탐구를 진행하는 모습')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-indigo-400"></i> image_13.png (화학 실험)
+                                    <i class="fa-regular fa-image text-indigo-400"></i> image_13.png
                                 </button>
                             </div>
                         </div>
@@ -348,19 +352,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div onclick="openImageModal('image_12.png', '반도체 연구', '반도체 칩 관찰 및 연구')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-indigo-500/50 transition">
-                                    <i class="fa-solid fa-microchip text-3xl text-indigo-400 mb-1"></i>
+                                    <i class="fa-solid fa-microchip text-2xl text-indigo-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #3</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_12.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">반도체 칩 관찰 및 연구</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">반도체 연구</p>
                             </div>
                             <div onclick="openImageModal('image_13.png', '화학 실험', '화학 반응 실험 탐구')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-indigo-500/50 transition">
-                                    <i class="fa-solid fa-vial text-3xl text-indigo-400 mb-1"></i>
+                                    <i class="fa-solid fa-vial text-2xl text-indigo-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #4</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_13.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">화학 반응 실험 탐구</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">화학 반응 실험</p>
                             </div>
                         </div>
                     </div>
@@ -373,27 +377,27 @@
                     </div>
 
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-14 md:pl-0">
-                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-rose-500 hover:border-rose-400 transition shadow-lg">
+                        <div class="glass-panel p-5 sm:p-6 rounded-2xl border-l-4 border-l-rose-500 hover:border-rose-400 transition shadow-lg">
                             <div class="flex items-center gap-2 mb-2 md:justify-end">
                                 <span class="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-400 text-xs font-semibold">영상 클립 3</span>
-                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>장면 3 (00:40~01:00)</span>
+                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>00:40~01:00</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2 md:justify-end">
+                            <h4 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2 md:justify-end">
                                 3. 시행착오와 친구의 응원
                                 <button onclick="playSceneAudio(3)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-rose-600 text-rose-400 hover:text-white transition text-xs" title="나레이션 듣기">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </button>
                             </h4>
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed mb-4 italic">
+                            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed mb-4 italic">
                                 "모든 것이 순조롭지만은 않았습니다. 수많은 오류와 실패 앞에 무너질 때, 친구가 건넨 한 마디가 다시 키보드 위에 손을 얹게 했습니다. '버그는 실패가 아니라 정답으로 가는 힌트'라고."
                             </div>
                             <div class="flex flex-wrap gap-2 text-xs md:justify-end">
                                 <button onclick="openImageModal('image_15.png', '오류와 잠든 지호', '반복되는 에러에 지쳐 고개를 묻은 지호')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-rose-400"></i> image_15.png (오류와 잠든 지호)
+                                    <i class="fa-regular fa-image text-rose-400"></i> image_15.png
                                 </button>
                                 <span class="text-slate-500 self-center">→</span>
                                 <button onclick="openImageModal('image_16.png', '새봄의 응원', '음료수를 건네며 격려하는 친구 새봄')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-rose-400"></i> image_16.png (새봄의 응원)
+                                    <i class="fa-regular fa-image text-rose-400"></i> image_16.png
                                 </button>
                             </div>
                         </div>
@@ -403,19 +407,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div onclick="openImageModal('image_15.png', '오류와 잠든 지호', '오류 화면 앞 지친 지호')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-rose-500/50 transition">
-                                    <i class="fa-solid fa-triangle-exclamation text-3xl text-rose-400 mb-1"></i>
+                                    <i class="fa-solid fa-triangle-exclamation text-2xl text-rose-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #5</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_15.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">오류 화면 앞 지친 지호</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">오류 앞 지친 지호</p>
                             </div>
                             <div onclick="openImageModal('image_16.png', '새봄의 응원', '새봄이 전하는 위로와 음료')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-rose-500/50 transition">
-                                    <i class="fa-solid fa-mug-hot text-3xl text-rose-400 mb-1"></i>
+                                    <i class="fa-solid fa-mug-hot text-2xl text-rose-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #6</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_16.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">새봄이 전하는 위로와 음료</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">친구 새봄의 응원</p>
                             </div>
                         </div>
                     </div>
@@ -428,27 +432,27 @@
                     </div>
 
                     <div class="w-full md:w-1/2 md:pl-12 pl-14">
-                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-emerald-500 hover:border-emerald-400 transition shadow-lg">
+                        <div class="glass-panel p-5 sm:p-6 rounded-2xl border-l-4 border-l-emerald-500 hover:border-emerald-400 transition shadow-lg">
                             <div class="flex items-center gap-2 mb-2">
                                 <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold">영상 클립 4</span>
-                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>장면 4 (01:00~01:20)</span>
+                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>01:00~01:20</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                            <h4 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
                                 4. 융합과 깨달음
                                 <button onclick="playSceneAudio(4)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-emerald-600 text-emerald-400 hover:text-white transition text-xs" title="나레이션 듣기">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </button>
                             </h4>
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed mb-4 italic">
+                            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed mb-4 italic">
                                 "컴퓨터공학, 반도체, 그리고 화학공학. 서로 다른 줄만 알았던 분야들이 하나의 꿈으로 이어져 마침내 첫 번째 결실을 맺었습니다."
                             </div>
                             <div class="flex flex-wrap gap-2 text-xs">
                                 <button onclick="openImageModal('image_14.png', '새봄과의 스터디', '친구와 힘을 합쳐 문제를 풀어나가는 스터디')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-emerald-400"></i> image_14.png (새봄과의 스터디)
+                                    <i class="fa-regular fa-image text-emerald-400"></i> image_14.png
                                 </button>
                                 <span class="text-slate-500 self-center">→</span>
                                 <button onclick="openImageModal('image_17.png', '완성된 게임 환호', '프로젝트 완성을 축하하는 기쁜 순간')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-emerald-400"></i> image_17.png (완성된 게임 환호)
+                                    <i class="fa-regular fa-image text-emerald-400"></i> image_17.png
                                 </button>
                             </div>
                         </div>
@@ -458,19 +462,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div onclick="openImageModal('image_14.png', '새봄과의 스터디', '함께 스터디하는 모습')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-emerald-500/50 transition">
-                                    <i class="fa-solid fa-users text-3xl text-emerald-400 mb-1"></i>
+                                    <i class="fa-solid fa-users text-2xl text-emerald-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #7</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_14.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">함께 스터디하는 모습</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">협동 스터디</p>
                             </div>
                             <div onclick="openImageModal('image_17.png', '완성된 게임 환호', 'Level Complete 기쁨')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-emerald-500/50 transition">
-                                    <i class="fa-solid fa-trophy text-3xl text-emerald-400 mb-1"></i>
+                                    <i class="fa-solid fa-trophy text-2xl text-emerald-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #8</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_17.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">Level Complete 기쁨</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">완성의 기쁨</p>
                             </div>
                         </div>
                     </div>
@@ -483,27 +487,27 @@
                     </div>
 
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-14 md:pl-0">
-                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-amber-500 hover:border-amber-400 transition shadow-lg">
+                        <div class="glass-panel p-5 sm:p-6 rounded-2xl border-l-4 border-l-amber-500 hover:border-amber-400 transition shadow-lg">
                             <div class="flex items-center gap-2 mb-2 md:justify-end">
                                 <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-xs font-semibold">영상 클립 5</span>
-                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>장면 5 (01:20~01:40)</span>
+                                <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i>01:20~01:40</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2 md:justify-end">
+                            <h4 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2 md:justify-end">
                                 5. 성장의 다짐
                                 <button onclick="playSceneAudio(5)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-amber-600 text-amber-400 hover:text-white transition text-xs" title="나레이션 듣기">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </button>
                             </h4>
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed mb-4 italic">
+                            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm leading-relaxed mb-4 italic">
                                 "어느 한 분야에 갇히지 않고 세상을 바꿔나갈 '공학자'라는 이름. 책상 위 쌓인 책들을 디딤돌 삼아, 지호의 세상은 오늘도 한 단계 더 넓어져 갑니다."
                             </div>
                             <div class="flex flex-wrap gap-2 text-xs md:justify-end">
                                 <button onclick="openImageModal('image_18.png', '축제 시연 발표', '학교 축제 부스에서 사람들에게 당당히 프로젝트를 발표하는 지호')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-amber-400"></i> image_18.png (축제 시연 발표)
+                                    <i class="fa-regular fa-image text-amber-400"></i> image_18.png
                                 </button>
                                 <span class="text-slate-500 self-center">→</span>
                                 <button onclick="openImageModal('image_19.png', '옥상의 디딤돌', '학교 옥상에서 미래의 도시를 조망하며 꿈을 다지는 지호')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 border border-slate-700/60 transition flex items-center gap-1 cursor-pointer">
-                                    <i class="fa-regular fa-image text-amber-400"></i> image_19.png (옥상의 디딤돌)
+                                    <i class="fa-regular fa-image text-amber-400"></i> image_19.png
                                 </button>
                             </div>
                         </div>
@@ -513,19 +517,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div onclick="openImageModal('image_18.png', '축제 시연 발표', '축제 부스 발표 현장')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-amber-500/50 transition">
-                                    <i class="fa-solid fa-bullhorn text-3xl text-amber-400 mb-1"></i>
+                                    <i class="fa-solid fa-bullhorn text-2xl text-amber-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #9</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_18.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">축제 부스 발표 현장</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">축제 발표 시연</p>
                             </div>
                             <div onclick="openImageModal('image_19.png', '옥상의 디딤돌', '옥상에서 본 미래 도시')" class="bg-slate-800/50 hover:bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center transition cursor-pointer group/item">
                                 <div class="w-full h-28 bg-slate-900 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs mb-2 group-hover/item:border group-hover/item:border-amber-500/50 transition">
-                                    <i class="fa-solid fa-city text-3xl text-amber-400 mb-1"></i>
+                                    <i class="fa-solid fa-city text-2xl text-amber-400 mb-1"></i>
                                     <span class="text-[10px] text-slate-400">스토리보드 #10</span>
                                 </div>
                                 <span class="text-xs font-medium text-slate-300 block">image_19.png</span>
-                                <p class="text-[11px] text-slate-400 mt-0.5">옥상에서 본 미래 도시</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">미래를 향한 다짐</p>
                             </div>
                         </div>
                     </div>
@@ -538,20 +542,20 @@
 
     <!-- Image View Modal -->
     <div id="imageModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
-        <div class="glass-panel max-w-lg w-full rounded-2xl p-6 relative flex flex-col gap-4 border border-slate-700/80 shadow-2xl scale-95 transition-transform duration-300" id="modalContainer">
-            <button onclick="closeImageModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white flex items-center justify-center transition cursor-pointer">
-                <i class="fa-solid fa-xmark"></i>
+        <div class="glass-panel max-w-sm w-full rounded-2xl p-5 relative flex flex-col gap-3 border border-slate-700/80 shadow-2xl scale-95 transition-transform duration-300" id="modalContainer">
+            <button onclick="closeImageModal()" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white flex items-center justify-center transition cursor-pointer">
+                <i class="fa-solid fa-xmark text-xs"></i>
             </button>
-            <div id="modalGraphic" class="w-full h-48 rounded-xl bg-slate-900 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden">
+            <div id="modalGraphic" class="w-full aspect-[9/16] max-h-[320px] rounded-xl bg-slate-900 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden mx-auto">
                 <canvas id="modalCanvas" class="w-full h-full absolute inset-0"></canvas>
             </div>
             <div>
-                <span id="modalFilename" class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">image_10.png</span>
-                <h3 id="modalTitle" class="text-lg font-bold text-white mt-1">장면 연출 상세</h3>
-                <p id="modalDesc" class="text-xs text-slate-300 mt-2 leading-relaxed">상세한 연출설명 내용이 보여지는 영역입니다.</p>
+                <span id="modalFilename" class="text-[10px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">image_10.png</span>
+                <h3 id="modalTitle" class="text-base font-bold text-white mt-1">장면 연출 상세</h3>
+                <p id="modalDesc" class="text-xs text-slate-300 mt-1.5 leading-relaxed">상세한 연출설명 내용이 보여지는 영역입니다.</p>
             </div>
-            <div class="flex justify-end mt-2">
-                <button onclick="closeImageModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium rounded-xl transition cursor-pointer">
+            <div class="flex justify-end mt-1">
+                <button onclick="closeImageModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium rounded-xl transition cursor-pointer">
                     닫기
                 </button>
             </div>
@@ -559,8 +563,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="glass-panel border-t border-slate-800 py-8 mt-16 text-center text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="glass-panel border-t border-slate-800 py-6 mt-12 text-center text-xs text-slate-500">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p>© 2026 지호의 성장 스토리 프로젝트. All rights reserved.</p>
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-brand-400 transition flex items-center gap-1 cursor-pointer">
                 <i class="fa-solid fa-house text-xs"></i> 상단으로 돌아가기
@@ -570,7 +574,6 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // Dark / Light Mode Toggle Logic
         let isDarkMode = true;
 
         function toggleTheme() {
@@ -592,12 +595,11 @@
             }
         }
 
-        // Check saved theme preference
+        // Restore theme preference
         if (localStorage.getItem('theme') === 'light') {
             toggleTheme();
         }
 
-        // Story Scenes Data
         const scenesData = [
             {
                 id: 1,
@@ -651,7 +653,6 @@
             }
         ];
 
-        // Player State Variables
         let currentTime = 0;
         const totalDuration = 100; // seconds
         let isSimPlaying = false;
@@ -662,29 +663,29 @@
         const mainVideo = document.getElementById('mainVideo');
         const canvasContainer = document.getElementById('canvasPlayerContainer');
 
-        // Toggle player between actual Video (mv.mp4) and Canvas Simulator
         function togglePlayerMode() {
             isCanvasMode = !isCanvasMode;
-            const label = document.getElementById('modeToggleLabel');
+            const modeToggleLabelText = document.getElementById('modeToggleLabelText');
+            
             if (isCanvasMode) {
                 if (mainVideo) mainVideo.classList.add('hidden');
                 if (canvasContainer) {
                     canvasContainer.classList.remove('hidden');
                     canvasContainer.classList.add('flex');
                 }
-                if (label) label.innerText = '영상 모드 전환';
+                if (modeToggleLabelText) modeToggleLabelText.innerText = '시뮬레이터 모드';
                 resizeCanvas();
+                drawCanvasScene();
             } else {
                 if (mainVideo) mainVideo.classList.remove('hidden');
                 if (canvasContainer) {
                     canvasContainer.classList.add('hidden');
                     canvasContainer.classList.remove('flex');
                 }
-                if (label) label.innerText = '시뮬레이터 전환';
+                if (modeToggleLabelText) modeToggleLabelText.innerText = '영상 재생 중';
             }
         }
 
-        // Sync mainVideo time updates with active Scene
         if (mainVideo) {
             mainVideo.addEventListener('timeupdate', () => {
                 currentTime = mainVideo.currentTime;
@@ -692,7 +693,6 @@
             });
         }
 
-        // Jump directly to a scene timestamp
         function jumpToScene(sceneNum) {
             const scene = scenesData.find(s => s.id === sceneNum);
             if (scene) {
@@ -702,6 +702,8 @@
                 if (mainVideo && !isCanvasMode) {
                     mainVideo.currentTime = scene.timeStart;
                     mainVideo.play().catch(() => {});
+                } else if (isCanvasMode) {
+                    drawCanvasScene();
                 }
 
                 updatePlayerUI();
@@ -716,10 +718,101 @@
             }
         }
 
-        // Text-to-Speech Narration Generator
+        function updatePlayerUI() {
+            // Find current active scene
+            const scene = scenesData.find(s => currentTime >= s.timeStart && currentTime < s.timeEnd) || scenesData[0];
+            currentSceneIndex = scene.id - 1;
+
+            const captionText = document.getElementById('captionText');
+            const currentSceneTag = document.getElementById('currentSceneTag');
+            const timeDisplay = document.getElementById('timeDisplay');
+
+            if (captionText) captionText.innerText = `"${scene.caption}"`;
+            if (currentSceneTag) {
+                currentSceneTag.innerText = scene.title;
+                currentSceneTag.style.backgroundColor = scene.color;
+            }
+
+            const currentMin = Math.floor(currentTime / 60).toString().padStart(2, '0');
+            const currentSec = Math.floor(currentTime % 60).toString().padStart(2, '0');
+            if (timeDisplay) timeDisplay.innerText = `${currentMin}:${currentSec} / 01:40`;
+
+            // Active button highlighting
+            document.querySelectorAll('.scene-btn').forEach(btn => {
+                const sceneId = parseInt(btn.getAttribute('data-scene'));
+                if (sceneId === scene.id) {
+                    btn.classList.add('bg-brand-600', 'text-white');
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                } else {
+                    btn.classList.remove('bg-brand-600', 'text-white');
+                    btn.classList.add('bg-slate-800', 'text-slate-300');
+                }
+            });
+        }
+
+        function resizeCanvas() {
+            const canvas = document.getElementById('storyCanvas');
+            if (canvas && canvasContainer) {
+                canvas.width = canvasContainer.clientWidth || 360;
+                canvas.height = canvasContainer.clientHeight || 640;
+            }
+        }
+
+        function drawCanvasScene() {
+            const canvas = document.getElementById('storyCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const scene = scenesData[currentSceneIndex] || scenesData[0];
+
+            // Background Gradient
+            const grad = ctx.createLinearGradient(0, 0, 0, height);
+            grad.addColorStop(0, '#0f172a');
+            grad.addColorStop(0.5, scene.color + '33');
+            grad.addColorStop(1, '#020617');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, width, height);
+
+            // Dynamic background particle circles
+            const pulse = (Date.now() % 3000) / 3000;
+            ctx.fillStyle = scene.color + '20';
+            ctx.beginPath();
+            ctx.arc(width / 2, height * 0.4, 80 + pulse * 20, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Decorative Storyboard Graphic
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 18px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(scene.title, width / 2, height * 0.38);
+
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '12px sans-serif';
+            ctx.fillText(`스토리보드 (${scene.images.join(', ')})`, width / 2, height * 0.43);
+        }
+
+        function toggleSimPlay() {
+            isSimPlaying = !isSimPlaying;
+            const playIcon = document.getElementById('playIcon');
+            if (isSimPlaying) {
+                if (playIcon) playIcon.className = 'fa-solid fa-pause';
+                simInterval = setInterval(() => {
+                    currentTime += 1;
+                    if (currentTime >= totalDuration) currentTime = 0;
+                    updatePlayerUI();
+                    drawCanvasScene();
+                }, 1000);
+            } else {
+                if (playIcon) playIcon.className = 'fa-solid fa-play ml-1';
+                clearInterval(simInterval);
+            }
+        }
+
         function speakCaption(text) {
             if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); // Stop prior
+                window.speechSynthesis.cancel();
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'ko-KR';
                 utterance.rate = 0.95;
@@ -745,7 +838,6 @@
             if (scene) speakCaption(scene.caption);
         }
 
-        // Modal for Detail Viewing
         function openImageModal(filename, title, desc) {
             const modal = document.getElementById('imageModal');
             const container = document.getElementById('modalContainer');
@@ -757,23 +849,21 @@
             if (modalTitle) modalTitle.innerText = title;
             if (modalDesc) modalDesc.innerText = desc;
 
-            // Render modal canvas thumbnail
             const modalCanvas = document.getElementById('modalCanvas');
             if (modalCanvas) {
                 const mctx = modalCanvas.getContext('2d');
-                modalCanvas.width = 400;
-                modalCanvas.height = 200;
+                modalCanvas.width = 280;
+                modalCanvas.height = 490; // 9:16 modal thumbnail ratio
                 mctx.fillStyle = '#0f172a';
-                mctx.fillRect(0, 0, 400, 200);
+                mctx.fillRect(0, 0, 280, 490);
 
-                // Decorative graphic inside modal
                 mctx.fillStyle = '#3b82f6';
-                mctx.font = 'bold 16px sans-serif';
+                mctx.font = 'bold 15px sans-serif';
                 mctx.textAlign = 'center';
-                mctx.fillText(filename, 200, 90);
+                mctx.fillText(filename, 140, 220);
                 mctx.fillStyle = '#94a3b8';
                 mctx.font = '12px sans-serif';
-                mctx.fillText(title, 200, 120);
+                mctx.fillText(title, 140, 250);
             }
 
             if (modal) {
@@ -797,14 +887,14 @@
             }
         }
 
-        // Initialize on Load
+        window.addEventListener('resize', resizeCanvas);
+
         window.onload = function() {
             resizeCanvas();
             updatePlayerUI();
 
-            // Continuous animation frame loop for dynamic glow on canvas
             function animateCanvas() {
-                if (isSimPlaying) {
+                if (isCanvasMode && isSimPlaying) {
                     drawCanvasScene();
                 }
                 requestAnimationFrame(animateCanvas);
