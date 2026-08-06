@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,8 +38,10 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', 'Noto Sans KR', sans-serif;
@@ -52,12 +55,14 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .glass-card:hover {
             border-color: rgba(217, 119, 6, 0.5);
             transform: translateY(-2px);
@@ -69,10 +74,12 @@
             background: rgba(30, 41, 59, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .dark .glass-card {
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         .dark .glass-card:hover {
             border-color: rgba(250, 204, 21, 0.4);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
@@ -81,27 +88,33 @@
         .glow-yellow {
             box-shadow: 0 0 25px -5px rgba(250, 204, 21, 0.3);
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #94a3b8;
             border-radius: 4px;
         }
+
         .dark .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #334155;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         .dark .custom-scrollbar::-webkit-scrollbar-track {
             background: #0f172a;
         }
     </style>
 </head>
 
-<body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-amber-500 selection:text-slate-950 transition-colors duration-300">
+<body
+    class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-amber-500 selection:text-slate-950 transition-colors duration-300">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-slate-200 dark:border-slate-800">
@@ -110,39 +123,57 @@
                 <!-- Left Section: Home Button & Brand Logo -->
                 <div class="flex items-center space-x-3 sm:space-x-4">
                     <!-- Home Button (Updated link to ../index.html) -->
-                    <a href="../index.html" title="홈으로 이동" class="w-10 h-10 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white flex items-center justify-center border border-slate-300 dark:border-slate-700 transition shadow-sm group">
+                    <a href="../index.html" title="홈으로 이동"
+                        class="w-10 h-10 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white flex items-center justify-center border border-slate-300 dark:border-slate-700 transition shadow-sm group">
                         <i class="fa-solid fa-house group-hover:scale-110 transition-transform"></i>
                     </a>
-                    
+
                     <!-- Brand Logo & Title -->
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-400/20">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-400/20">
                             <i class="fa-solid fa-shield-cat"></i>
                         </div>
                         <div>
-                            <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 tracking-wider uppercase block">PRD Overview Documentation</span>
-                            <h1 class="text-base font-bold text-slate-900 dark:text-white tracking-tight">전국 어린이집 안전도 & 스쿨존 지도</h1>
+                            <span
+                                class="text-xs font-semibold text-amber-600 dark:text-amber-400 tracking-wider uppercase block">PRD
+                                Overview Documentation</span>
+                            <h1 class="text-base font-bold text-slate-900 dark:text-white tracking-tight">전국 어린이집 안전도 &
+                                스쿨존 지도</h1>
                         </div>
                     </div>
                 </div>
 
                 <!-- Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-1 text-sm font-medium">
-                    <a href="#overview" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">개요</a>
-                    <a href="#features" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">주요 기능</a>
-                    <a href="#calculator" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">안전도 시뮬레이터</a>
-                    <a href="#data-pipeline" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">데이터 구조</a>
-                    <a href="#design-system" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">디자인 가이드</a>
-                    <a href="#roadmap" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">구현 일정</a>
+                    <a href="#overview"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">개요</a>
+                    <a href="#features"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">주요
+                        기능</a>
+                    <a href="#calculator"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">안전도
+                        시뮬레이터</a>
+                    <a href="#data-pipeline"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">데이터
+                        구조</a>
+                    <a href="#design-system"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">디자인
+                        가이드</a>
+                    <a href="#roadmap"
+                        class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 transition">구현
+                        일정</a>
                 </nav>
 
                 <div class="flex items-center space-x-2 sm:space-x-3">
                     <!-- Dark / Light Mode Toggle Button -->
-                    <button id="themeToggleBtn" title="화면 테마 변경" class="w-10 h-10 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-slate-300 dark:border-slate-700 transition shadow-sm">
+                    <button id="themeToggleBtn" title="화면 테마 변경"
+                        class="w-10 h-10 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-slate-300 dark:border-slate-700 transition shadow-sm">
                         <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
                     </button>
 
-                    <a href="#full-prd" class="hidden sm:flex px-4 py-2 text-xs font-semibold rounded-lg bg-amber-400 text-slate-950 hover:bg-amber-300 transition items-center space-x-2 shadow-md shadow-amber-400/10">
+                    <a href="#full-prd"
+                        class="hidden sm:flex px-4 py-2 text-xs font-semibold rounded-lg bg-amber-400 text-slate-950 hover:bg-amber-300 transition items-center space-x-2 shadow-md shadow-amber-400/10">
                         <i class="fa-solid fa-file-lines"></i>
                         <span>전문 명세 보기</span>
                     </a>
@@ -156,28 +187,39 @@
         <section id="overview" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-semibold">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-semibold">
                         <span class="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse"></span>
                         <span>공공 데이터 기반 공간분석 기획서</span>
                     </div>
-                    
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">
+
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">
                         데이터로 시각화하는<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-200">
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-200">
                             우리 아이 안심 케어지도
                         </span>
                     </h1>
-                    
+
                     <p class="text-slate-700 dark:text-slate-300 text-base leading-relaxed max-w-2xl">
-                        <code class="text-amber-700 dark:text-amber-300 bg-amber-100/70 dark:bg-slate-800/80 px-1.5 py-0.5 rounded text-xs">전국어린이집표준데이터</code>와 <code class="text-amber-700 dark:text-amber-300 bg-amber-100/70 dark:bg-slate-800/80 px-1.5 py-0.5 rounded text-xs">전국어린이보호구역표준데이터</code>를 융합하여, 어린이집 위치와 <strong>반경 300m 이내 CCTV 밀집도</strong>를 지능적으로 분석합니다. 한눈에 파악하는 안전 등급과 스쿨존 영역 레이어를 통해 영유아 안전 환경을 직관적으로 시각화합니다.
+                        <code
+                            class="text-amber-700 dark:text-amber-300 bg-amber-100/70 dark:bg-slate-800/80 px-1.5 py-0.5 rounded text-xs">전국어린이집표준데이터</code>와
+                        <code
+                            class="text-amber-700 dark:text-amber-300 bg-amber-100/70 dark:bg-slate-800/80 px-1.5 py-0.5 rounded text-xs">전국어린이보호구역표준데이터</code>를
+                        융합하여, 어린이집 위치와 <strong>반경 300m 이내 CCTV 밀집도</strong>를 지능적으로 분석합니다. 한눈에 파악하는 안전 등급과 스쿨존 영역 레이어를 통해
+                        영유아 안전 환경을 직관적으로 시각화합니다.
                     </p>
 
                     <!-- Go to App CTA Button -->
                     <div class="pt-2">
-                        <a href="https://cdd7636.github.io/AI2026_kidss/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 group">
-                            <i class="fa-solid fa-map-location-dot text-base group-hover:scale-110 transition-transform"></i>
+                        <a href="https://cdd7636.github.io/AI2026_kidss/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 group">
+                            <i
+                                class="fa-solid fa-map-location-dot text-base group-hover:scale-110 transition-transform"></i>
                             <span>앱으로 이동하기</span>
-                            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                            <i
+                                class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
 
@@ -185,18 +227,23 @@
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
                         <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800">
                             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-1">분석 대상 데이터</div>
-                            <div class="text-xl font-bold text-amber-600 dark:text-amber-400">14,647+ <span class="text-xs text-slate-500 dark:text-slate-400 font-normal">건</span></div>
+                            <div class="text-xl font-bold text-amber-600 dark:text-amber-400">14,647+ <span
+                                    class="text-xs text-slate-500 dark:text-slate-400 font-normal">건</span></div>
                             <div class="text-[11px] text-slate-500 dark:text-slate-500 mt-1">스쿨존 및 시설 데이터</div>
                         </div>
                         <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800">
                             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-1">안전 반경 기준</div>
-                            <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">300m <span class="text-xs text-slate-500 dark:text-slate-400 font-normal">반경</span></div>
+                            <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">300m <span
+                                    class="text-xs text-slate-500 dark:text-slate-400 font-normal">반경</span></div>
                             <div class="text-[11px] text-slate-500 dark:text-slate-500 mt-1">Haversine 거리 연산</div>
                         </div>
-                        <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 col-span-2 sm:col-span-1">
+                        <div
+                            class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 col-span-2 sm:col-span-1">
                             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-1">안전 등급 체계</div>
                             <div class="text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-1">
-                                <span class="text-emerald-600 dark:text-emerald-400">상</span><span>/</span><span class="text-amber-600 dark:text-amber-400">중</span><span>/</span><span class="text-rose-600 dark:text-rose-400">하</span>
+                                <span class="text-emerald-600 dark:text-emerald-400">상</span><span>/</span><span
+                                    class="text-amber-600 dark:text-amber-400">중</span><span>/</span><span
+                                    class="text-rose-600 dark:text-rose-400">하</span>
                             </div>
                             <div class="text-[11px] text-slate-500 dark:text-slate-500 mt-1">CCTV 개수 기반 3단계</div>
                         </div>
@@ -205,77 +252,107 @@
 
                 <!-- Interactive Service Wireframe Preview Mockup -->
                 <div class="lg:col-span-5">
-                    <div class="glass-panel p-4 rounded-2xl border border-slate-300 dark:border-slate-700/60 shadow-2xl relative overflow-hidden">
+                    <div
+                        class="glass-panel p-4 rounded-2xl border border-slate-300 dark:border-slate-700/60 shadow-2xl relative overflow-hidden">
                         <!-- Top Bar Mockup -->
-                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 mb-3 text-xs">
+                        <div
+                            class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 mb-3 text-xs">
                             <div class="flex items-center space-x-2">
                                 <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
                                 <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
                                 <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                                <span class="ml-2 font-mono text-slate-500 dark:text-slate-400 text-[11px]">Childcare_Safety_Map_UI_Preview</span>
+                                <span
+                                    class="ml-2 font-mono text-slate-500 dark:text-slate-400 text-[11px]">Childcare_Safety_Map_UI_Preview</span>
                             </div>
-                            <span class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-700 dark:text-amber-300 text-[10px]">Mockup Preview</span>
+                            <span
+                                class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-700 dark:text-amber-300 text-[10px]">Mockup
+                                Preview</span>
                         </div>
 
                         <!-- Mockup Inner Container -->
-                        <div class="relative h-72 rounded-xl bg-slate-100 dark:bg-slate-950 overflow-hidden border border-slate-200 dark:border-slate-800 flex">
+                        <div
+                            class="relative h-72 rounded-xl bg-slate-100 dark:bg-slate-950 overflow-hidden border border-slate-200 dark:border-slate-800 flex">
                             <!-- Simulated Sidebar -->
-                            <div class="w-1/3 bg-slate-200/80 dark:bg-slate-900 border-r border-slate-300 dark:border-slate-800 p-2 text-[10px] space-y-2 flex flex-col justify-between">
+                            <div
+                                class="w-1/3 bg-slate-200/80 dark:bg-slate-900 border-r border-slate-300 dark:border-slate-800 p-2 text-[10px] space-y-2 flex flex-col justify-between">
                                 <div class="space-y-2">
-                                    <div class="bg-white/80 dark:bg-slate-800/80 p-2 rounded border border-slate-300 dark:border-slate-700">
-                                        <div class="font-bold text-amber-700 dark:text-amber-300 mb-1"><i class="fa-solid fa-filter mr-1"></i>필터 설정</div>
+                                    <div
+                                        class="bg-white/80 dark:bg-slate-800/80 p-2 rounded border border-slate-300 dark:border-slate-700">
+                                        <div class="font-bold text-amber-700 dark:text-amber-300 mb-1"><i
+                                                class="fa-solid fa-filter mr-1"></i>필터 설정</div>
                                         <div class="text-slate-600 dark:text-slate-400 space-y-1">
-                                            <div class="flex items-center justify-between"><span>통학차량</span><span class="text-emerald-600 dark:text-emerald-400 font-semibold">운영(Y)</span></div>
-                                            <div class="flex items-center justify-between"><span>CCTV 10대+</span><span class="text-amber-600 dark:text-amber-400 font-semibold">ON</span></div>
+                                            <div class="flex items-center justify-between"><span>통학차량</span><span
+                                                    class="text-emerald-600 dark:text-emerald-400 font-semibold">운영(Y)</span>
+                                            </div>
+                                            <div class="flex items-center justify-between"><span>CCTV 10대+</span><span
+                                                    class="text-amber-600 dark:text-amber-400 font-semibold">ON</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="space-y-1">
-                                        <div class="bg-white/80 dark:bg-slate-800/50 p-1.5 rounded flex justify-between items-center border border-slate-300 dark:border-slate-700/50">
+                                        <div
+                                            class="bg-white/80 dark:bg-slate-800/50 p-1.5 rounded flex justify-between items-center border border-slate-300 dark:border-slate-700/50">
                                             <span class="text-slate-800 dark:text-slate-300">해맑은 어린이집</span>
                                             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                                         </div>
-                                        <div class="bg-white/80 dark:bg-slate-800/50 p-1.5 rounded flex justify-between items-center border border-slate-300 dark:border-slate-700/50">
+                                        <div
+                                            class="bg-white/80 dark:bg-slate-800/50 p-1.5 rounded flex justify-between items-center border border-slate-300 dark:border-slate-700/50">
                                             <span class="text-slate-800 dark:text-slate-300">꿈나무 어린이집</span>
                                             <span class="w-2 h-2 rounded-full bg-amber-500"></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-1.5 bg-amber-500/10 rounded border border-amber-500/20 text-[9px] text-amber-800 dark:text-amber-300">
+                                <div
+                                    class="p-1.5 bg-amber-500/10 rounded border border-amber-500/20 text-[9px] text-amber-800 dark:text-amber-300">
                                     <i class="fa-solid fa-circle-info mr-1"></i>실시간 통계 카드 연동
                                 </div>
                             </div>
 
                             <!-- Simulated Map Visual -->
-                            <div class="w-2/3 bg-slate-200 dark:bg-slate-950 relative overflow-hidden flex items-center justify-center">
+                            <div
+                                class="w-2/3 bg-slate-200 dark:bg-slate-950 relative overflow-hidden flex items-center justify-center">
                                 <!-- Map Grid Lines simulation -->
-                                <div class="absolute inset-0 opacity-30 dark:opacity-20 bg-[radial-gradient(#0284c7_1px,transparent_1px)] dark:bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                                
+                                <div
+                                    class="absolute inset-0 opacity-30 dark:opacity-20 bg-[radial-gradient(#0284c7_1px,transparent_1px)] dark:bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]">
+                                </div>
+
                                 <!-- School Zone Overlay Layer Simulation -->
-                                <div class="absolute w-36 h-36 rounded-full border border-amber-500/50 dark:border-amber-400/40 bg-amber-400/20 dark:bg-amber-400/10 animate-pulse flex items-center justify-center">
-                                    <span class="text-[9px] text-amber-800 dark:text-amber-300/60 font-mono font-semibold">300m Zone</span>
+                                <div
+                                    class="absolute w-36 h-36 rounded-full border border-amber-500/50 dark:border-amber-400/40 bg-amber-400/20 dark:bg-amber-400/10 animate-pulse flex items-center justify-center">
+                                    <span
+                                        class="text-[9px] text-amber-800 dark:text-amber-300/60 font-mono font-semibold">300m
+                                        Zone</span>
                                 </div>
 
                                 <!-- Custom Marker Demo (Green Border) -->
-                                <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
-                                    <div class="w-7 h-7 rounded-full bg-amber-400 border-2 border-emerald-500 flex items-center justify-center shadow-lg transform group-hover:scale-125 transition">
+                                <div
+                                    class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-amber-400 border-2 border-emerald-500 flex items-center justify-center shadow-lg transform group-hover:scale-125 transition">
                                         <i class="fa-solid fa-child text-slate-950 text-xs"></i>
                                     </div>
                                     <!-- Tooltip / Popup preview -->
-                                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-32 glass-panel p-1.5 rounded text-[9px] text-slate-900 dark:text-white space-y-0.5 shadow-xl border border-emerald-500/50">
-                                        <div class="font-bold text-amber-700 dark:text-amber-300 truncate">해맑은 어린이집</div>
-                                        <div class="text-[8px] text-slate-600 dark:text-slate-300">CCTV: <span class="text-emerald-600 dark:text-emerald-400 font-bold">12대 (상)</span></div>
+                                    <div
+                                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-32 glass-panel p-1.5 rounded text-[9px] text-slate-900 dark:text-white space-y-0.5 shadow-xl border border-emerald-500/50">
+                                        <div class="font-bold text-amber-700 dark:text-amber-300 truncate">해맑은 어린이집
+                                        </div>
+                                        <div class="text-[8px] text-slate-600 dark:text-slate-300">CCTV: <span
+                                                class="text-emerald-600 dark:text-emerald-400 font-bold">12대 (상)</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Custom Marker Demo 2 (Amber Border) -->
                                 <div class="absolute bottom-1/4 right-1/4 transform cursor-pointer">
-                                    <div class="w-6 h-6 rounded-full bg-amber-400 border-2 border-amber-500 flex items-center justify-center shadow-md">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-amber-400 border-2 border-amber-500 flex items-center justify-center shadow-md">
                                         <i class="fa-solid fa-child text-slate-950 text-[10px]"></i>
                                     </div>
                                 </div>
 
                                 <!-- Toggle Button Visual overlay -->
-                                <div class="absolute top-2 right-2 bg-white/90 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 px-2 py-1 rounded text-[9px] flex items-center space-x-1 text-slate-700 dark:text-slate-300 shadow-sm">
+                                <div
+                                    class="absolute top-2 right-2 bg-white/90 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 px-2 py-1 rounded text-[9px] flex items-center space-x-1 text-slate-700 dark:text-slate-300 shadow-sm">
                                     <i class="fa-solid fa-layer-group text-amber-500 dark:text-amber-400"></i>
                                     <span>스쿨존 레이어 ON</span>
                                 </div>
@@ -283,7 +360,8 @@
                         </div>
 
                         <div class="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">
-                            <i class="fa-solid fa-mouse-pointer text-amber-500 dark:text-amber-400 mr-1"></i> 지도 인터랙션 및 반경 계산 시각화 컨셉
+                            <i class="fa-solid fa-mouse-pointer text-amber-500 dark:text-amber-400 mr-1"></i> 지도 인터랙션 및
+                            반경 계산 시각화 컨셉
                         </div>
                     </div>
                 </div>
@@ -291,21 +369,27 @@
         </section>
 
         <!-- Core Features Detailed Breakdown -->
-        <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="features"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Core Features</h2>
+                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Core
+                    Features</h2>
                 <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">4대 핵심 기능 상세 명세</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">사용자 편의성과 정밀한 공간데이터 처리를 조합한 주요 구현 요구사항입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Feature 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div
+                    class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
                     <div class="flex items-start justify-between">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-xl font-bold">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-xl font-bold">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature 01</span>
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature
+                            01</span>
                     </div>
                     <div>
                         <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">지도 마커 & 스쿨존 레이어 토글</h4>
@@ -313,41 +397,67 @@
                             어린이집의 위경도 좌표를 기반으로 지도상에 직관적인 노란색 커스텀 마커를 표시하고, 스쿨존 반경 레이어를 토글 방식으로 손쉽게 제어합니다.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>위도/경도 데이터 기반 기본 <strong class="text-slate-800 dark:text-slate-200">노란색 마커</strong> 배치</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>지도 우측 상단 <strong class="text-slate-800 dark:text-slate-200">Toggle Switch</strong>를 통한 레이어 제어</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>스쿨존 300m 보호구역 시각적 반경 렌더링</li>
+                    <ul
+                        class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>위도/경도 데이터 기반 기본
+                            <strong class="text-slate-800 dark:text-slate-200">노란색 마커</strong> 배치</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>지도 우측 상단 <strong
+                                class="text-slate-800 dark:text-slate-200">Toggle Switch</strong>를 통한 레이어 제어</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-amber-500 dark:text-amber-400 mr-2"></i>스쿨존 300m 보호구역 시각적
+                            반경 렌더링</li>
                     </ul>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div
+                    class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
                     <div class="flex items-start justify-between">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-xl font-bold">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-xl font-bold">
                             <i class="fa-solid fa-calculator"></i>
                         </div>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature 02</span>
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature
+                            02</span>
                     </div>
                     <div>
                         <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">CCTV 반경 연산 & 안전도 등급</h4>
                         <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
-                            어린이집 중심 반경 300m 내에 존재하는 총 CCTV 설치 대수를 하버사인(Haversine) 공식을 적용하여 정밀하게 합산하고 마커 테두리 색상으로 등급을 표현합니다.
+                            어린이집 중심 반경 300m 내에 존재하는 총 CCTV 설치 대수를 하버사인(Haversine) 공식을 적용하여 정밀하게 합산하고 마커 테두리 색상으로 등급을
+                            표현합니다.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
-                        <li class="flex items-center"><i class="fa-solid fa-circle text-emerald-500 text-[10px] mr-2"></i><strong class="text-slate-800 dark:text-slate-200">상 (High)</strong>: CCTV 10대 이상 (<span class="font-mono text-emerald-600 dark:text-emerald-400">#10B981</span>)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle text-amber-500 text-[10px] mr-2"></i><strong class="text-slate-800 dark:text-slate-200">중 (Medium)</strong>: CCTV 5대 ~ 9대 (<span class="font-mono text-amber-600 dark:text-amber-400">#F59E0B</span>)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle text-rose-500 text-[10px] mr-2"></i><strong class="text-slate-800 dark:text-slate-200">하 (Low)</strong>: CCTV 5대 미만 (<span class="font-mono text-rose-600 dark:text-rose-400">#EF4444</span>)</li>
+                    <ul
+                        class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-circle text-emerald-500 text-[10px] mr-2"></i><strong
+                                class="text-slate-800 dark:text-slate-200">상 (High)</strong>: CCTV 10대 이상 (<span
+                                class="font-mono text-emerald-600 dark:text-emerald-400">#10B981</span>)</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-circle text-amber-500 text-[10px] mr-2"></i><strong
+                                class="text-slate-800 dark:text-slate-200">중 (Medium)</strong>: CCTV 5대 ~ 9대 (<span
+                                class="font-mono text-amber-600 dark:text-amber-400">#F59E0B</span>)</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-circle text-rose-500 text-[10px] mr-2"></i><strong
+                                class="text-slate-800 dark:text-slate-200">하 (Low)</strong>: CCTV 5대 미만 (<span
+                                class="font-mono text-rose-600 dark:text-rose-400">#EF4444</span>)</li>
                     </ul>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div
+                    class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
                     <div class="flex items-start justify-between">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 text-xl font-bold">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 text-xl font-bold">
                             <i class="fa-solid fa-filter"></i>
                         </div>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature 03</span>
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature
+                            03</span>
                     </div>
                     <div>
                         <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">사이드바 필터링 & 통계 요약</h4>
@@ -355,20 +465,31 @@
                             실시간 키워드 검색, 통학차량 운영 여부, CCTV 10대 이상 보유 여부 필터를 제공하며 데이터 통계를 한눈에 볼 수 있는 요약 카드를 배치합니다.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>통학차량 운영 여부 (전체 / Y / N) 필터</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>CCTV 10대 이상 보유 시설만 보기 토글 스위치</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>어린이집명 및 도로명/지번 주소 실시간 검색</li>
+                    <ul
+                        class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>통학차량 운영 여부 (전체 / Y /
+                            N) 필터</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>CCTV 10대 이상 보유 시설만
+                            보기 토글 스위치</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-blue-600 dark:text-blue-400 mr-2"></i>어린이집명 및 도로명/지번 주소
+                            실시간 검색</li>
                     </ul>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div
+                    class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 relative overflow-hidden">
                     <div class="flex items-start justify-between">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xl font-bold">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xl font-bold">
                             <i class="fa-solid fa-window-maximize"></i>
                         </div>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature 04</span>
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Feature
+                            04</span>
                     </div>
                     <div>
                         <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">마커 클릭 상세 정보 팝업</h4>
@@ -376,20 +497,31 @@
                             지도 상의 특정 어린이집 마커 클릭 시 해당 시설의 안전 관련 핵심 정보(소방 점검, 비상구, 통학차량 등)를 카드 모달로 띄워줍니다.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>어린이집명 및 주소(도로명/지번) 표시</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>비상구 설치 여부 & 소방점검일자 (YYYY-MM-DD)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>반경 300m CCTV 수 및 안전도 등급 배지 표시</li>
+                    <ul
+                        class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>어린이집명 및
+                            주소(도로명/지번) 표시</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>비상구 설치 여부 &
+                            소방점검일자 (YYYY-MM-DD)</li>
+                        <li class="flex items-center"><i
+                                class="fa-solid fa-check text-purple-600 dark:text-purple-400 mr-2"></i>반경 300m CCTV 수 및
+                            안전도 등급 배지 표시</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Interactive Safety Rating Calculator Simulator -->
-        <section id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
-            <div class="glass-panel p-8 rounded-3xl border border-slate-300 dark:border-slate-700/70 shadow-2xl relative">
+        <section id="calculator"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+            <div
+                class="glass-panel p-8 rounded-3xl border border-slate-300 dark:border-slate-700/70 shadow-2xl relative">
                 <div class="max-w-3xl">
-                    <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider">Interactive Logic Simulator</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider">Interactive
+                        Logic Simulator</span>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-3">안전도 등급 판정 시뮬레이터</h2>
                     <p class="text-slate-700 dark:text-slate-300 text-sm mt-1">
                         PRD의 안전도 산출 로직을 직접 테스트해보세요. 반경 300m 이내 CCTV 개수를 조절하면 실시간으로 마커 테두리 색상과 안전 등급 배지가 변경됩니다.
@@ -398,17 +530,22 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mt-8 items-center">
                     <!-- Control Panel -->
-                    <div class="md:col-span-7 space-y-6 bg-slate-100/80 dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <div
+                        class="md:col-span-7 space-y-6 bg-slate-100/80 dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label for="cctvRange" class="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                                    <i class="fa-solid fa-video text-amber-500 dark:text-amber-400 mr-2"></i>반경 300m 내 CCTV 설치 대수
+                                    <i class="fa-solid fa-video text-amber-500 dark:text-amber-400 mr-2"></i>반경 300m 내
+                                    CCTV 설치 대수
                                 </label>
-                                <span id="cctvValue" class="text-2xl font-black text-amber-600 dark:text-amber-400 font-mono">12 <span class="text-xs text-slate-500 dark:text-slate-400">대</span></span>
+                                <span id="cctvValue"
+                                    class="text-2xl font-black text-amber-600 dark:text-amber-400 font-mono">12 <span
+                                        class="text-xs text-slate-500 dark:text-slate-400">대</span></span>
                             </div>
-                            <input type="range" id="cctvRange" min="0" max="25" value="12" step="1" 
+                            <input type="range" id="cctvRange" min="0" max="25" value="12" step="1"
                                 class="w-full h-2 bg-slate-300 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-amber-500 dark:accent-amber-400">
-                            <div class="flex justify-between text-[11px] text-slate-500 dark:text-slate-500 mt-1 font-mono">
+                            <div
+                                class="flex justify-between text-[11px] text-slate-500 dark:text-slate-500 mt-1 font-mono">
                                 <span>0대 (하)</span>
                                 <span>5대 (중)</span>
                                 <span>10대+ (상)</span>
@@ -417,37 +554,46 @@
                         </div>
 
                         <!-- Distance Calculation Note -->
-                        <div class="p-4 rounded-xl bg-slate-200/60 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 space-y-2 text-xs">
+                        <div
+                            class="p-4 rounded-xl bg-slate-200/60 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 space-y-2 text-xs">
                             <div class="font-bold text-slate-800 dark:text-slate-300 flex items-center">
                                 <i class="fa-solid fa-calculator text-emerald-600 dark:text-emerald-400 mr-2"></i>
                                 Haversine 거리 연산 로직
                             </div>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-[11px]">
-                                <span class="font-mono text-amber-700 dark:text-amber-300">a = sin²(Δφ/2) + cos φ1 · cos φ2 · sin²(Δλ/2)</span><br>
-                                <span class="font-mono text-amber-700 dark:text-amber-300">d = 2 · R · arcsin(√a)</span> (R = 6371km)<br>
+                                <span class="font-mono text-amber-700 dark:text-amber-300">a = sin²(Δφ/2) + cos φ1 · cos
+                                    φ2 · sin²(Δλ/2)</span><br>
+                                <span class="font-mono text-amber-700 dark:text-amber-300">d = 2 · R · arcsin(√a)</span>
+                                (R = 6371km)<br>
                                 이 계산식을 통해 어린이집 좌표와 스쿨존 CCTV 좌표 간 직선 거리가 300m 이하인 CCTV 개수를 실시간 합산합니다.
                             </p>
                         </div>
                     </div>
 
                     <!-- Live Result Display Marker Preview -->
-                    <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-slate-100/90 dark:bg-slate-950/80 rounded-2xl border border-slate-200 dark:border-slate-800">
-                        <div class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">실시간 마커 rendering preview</div>
-                        
+                    <div
+                        class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-slate-100/90 dark:bg-slate-950/80 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <div class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">실시간 마커 rendering
+                            preview</div>
+
                         <!-- Simulated Dynamic Marker -->
-                        <div id="simulatedMarker" class="relative w-20 h-20 rounded-full bg-amber-400 border-4 border-emerald-500 flex items-center justify-center shadow-2xl transition-all duration-300 glow-yellow">
+                        <div id="simulatedMarker"
+                            class="relative w-20 h-20 rounded-full bg-amber-400 border-4 border-emerald-500 flex items-center justify-center shadow-2xl transition-all duration-300 glow-yellow">
                             <i class="fa-solid fa-child-reaching text-slate-950 text-3xl"></i>
                         </div>
 
                         <!-- Dynamic Status Badge -->
-                        <div id="gradeBadge" class="mt-6 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/40 text-sm font-bold flex items-center space-x-2">
+                        <div id="gradeBadge"
+                            class="mt-6 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/40 text-sm font-bold flex items-center space-x-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                             <span id="gradeText">안전도 등급: 상 (High)</span>
                         </div>
 
                         <div class="mt-4 text-center">
-                            <div id="gradeDesc" class="text-xs text-slate-700 dark:text-slate-300 font-medium">반경 300m 내 CCTV가 10대 이상으로 매우 안전합니다.</div>
-                            <div id="colorHex" class="text-[11px] font-mono text-slate-500 dark:text-slate-500 mt-1">Border Color: #10B981</div>
+                            <div id="gradeDesc" class="text-xs text-slate-700 dark:text-slate-300 font-medium">반경 300m 내
+                                CCTV가 10대 이상으로 매우 안전합니다.</div>
+                            <div id="colorHex" class="text-[11px] font-mono text-slate-500 dark:text-slate-500 mt-1">
+                                Border Color: #10B981</div>
                         </div>
                     </div>
                 </div>
@@ -455,23 +601,32 @@
         </section>
 
         <!-- Data Architecture & Preprocessing Pipeline -->
-        <section id="data-pipeline" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="data-pipeline"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Data Pipeline</h2>
+                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Data
+                    Pipeline</h2>
                 <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">데이터 파이프라인 & 전처리 계획</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2"><code class="text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-slate-800 px-1 py-0.5 rounded">preprocess.py</code>를 통한 공공데이터 추출, 공간 거리 연산 및 JSON 구조화 파이프라인입니다.</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2"><code
+                        class="text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-slate-800 px-1 py-0.5 rounded">preprocess.py</code>를
+                    통한 공공데이터 추출, 공간 거리 연산 및 JSON 구조화 파이프라인입니다.</p>
             </div>
 
             <!-- Pipeline Diagram Steps -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
                 <!-- Step 1 -->
                 <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative">
-                    <div class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">01</div>
+                    <div
+                        class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">
+                        01</div>
                     <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">원시 데이터 필터링</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
-                        <code class="text-slate-800 dark:text-slate-300">전국어린이보호구역표준데이터.csv</code>에서 <span class="text-amber-700 dark:text-amber-300 font-semibold">시설종류 = '어린이집'</span> 레코드만 정제 추출하여 <code class="text-slate-800 dark:text-slate-300">전국어린이집표준데이터.csv</code> 생성
+                        <code class="text-slate-800 dark:text-slate-300">전국어린이보호구역표준데이터.csv</code>에서 <span
+                            class="text-amber-700 dark:text-amber-300 font-semibold">시설종류 = '어린이집'</span> 레코드만 정제 추출하여
+                        <code class="text-slate-800 dark:text-slate-300">전국어린이집표준데이터.csv</code> 생성
                     </p>
-                    <div class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
+                    <div
+                        class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                         • 통학차량운영여부 (Y/N)<br>
                         • 비상구설치여부 정율화<br>
                         • 소방점검일자 포맷팅
@@ -480,12 +635,15 @@
 
                 <!-- Step 2 -->
                 <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative">
-                    <div class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">02</div>
+                    <div
+                        class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">
+                        02</div>
                     <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">300m 하버사인 공간 연산</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
                         각 어린이집 좌표(Lat/Lng) 기준으로 반경 300m 이내에 위치한 스쿨존 CCTV 시설의 총 카메라 개수를 계산 합산
                     </p>
-                    <div class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
+                    <div
+                        class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                         • Haversine Distance Calc<br>
                         • Radius threshold: 0.3km<br>
                         • Safety Grade Assignment
@@ -494,12 +652,17 @@
 
                 <!-- Step 3 -->
                 <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative">
-                    <div class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">03</div>
+                    <div
+                        class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-sm mb-4">
+                        03</div>
                     <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">웹 경량 데이터 JSON 변환</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
-                        초기 반응성 증대를 위해 분석 결과를 정제된 <code class="text-slate-800 dark:text-slate-300">daycare_data.json</code> 구조체로 내보내어 클라이언트 직접 로딩 구조 구현
+                        초기 반응성 증대를 위해 분석 결과를 정제된 <code
+                            class="text-slate-800 dark:text-slate-300">daycare_data.json</code> 구조체로 내보내어 클라이언트 직접 로딩 구조
+                        구현
                     </p>
-                    <div class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
+                    <div
+                        class="mt-4 p-3 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                         • output: daycare_data.json<br>
                         • Fast Client Filtering<br>
                         • Leaflet Marker Binding
@@ -509,14 +672,19 @@
 
             <!-- JSON Schema Preview Code Block -->
             <div class="mt-8 glass-panel rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 mb-4">
+                <div
+                    class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 mb-4">
                     <div class="flex items-center space-x-2">
                         <i class="fa-solid fa-code text-amber-600 dark:text-amber-400"></i>
-                        <span class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">daycare_data.json (Output Schema Format)</span>
+                        <span class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">daycare_data.json
+                            (Output Schema Format)</span>
                     </div>
-                    <span class="text-[10px] bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 px-2 py-0.5 rounded">JSON Spec</span>
+                    <span
+                        class="text-[10px] bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 px-2 py-0.5 rounded">JSON
+                        Spec</span>
                 </div>
-                <pre class="text-xs font-mono text-slate-800 dark:text-slate-300 overflow-x-auto custom-scrollbar p-3 bg-slate-100 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800/80 leading-relaxed"><code>[
+                <pre
+                    class="text-xs font-mono text-slate-800 dark:text-slate-300 overflow-x-auto custom-scrollbar p-3 bg-slate-100 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800/80 leading-relaxed"><code>[
   {
     <span class="text-amber-700 dark:text-amber-300">"id"</span>: <span class="text-emerald-600 dark:text-emerald-400">"DC-2026-001"</span>,
     <span class="text-amber-700 dark:text-amber-300">"name"</span>: <span class="text-emerald-600 dark:text-emerald-400">"해맑은 어린이집"</span>,
@@ -534,17 +702,21 @@
         </section>
 
         <!-- Design System & Palette -->
-        <section id="design-system" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="design-system"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Design System</h2>
+                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Design
+                    System</h2>
                 <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">UI/UX 디자인 시스템 명세</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Modern Dark / Clean Light 하이브리드 글래스모피즘 스타일링 가이드입니다.</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Modern Dark / Clean Light 하이브리드 글래스모피즘 스타일링
+                    가이드입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <!-- Color 1 -->
                 <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <div class="h-16 rounded-lg bg-slate-900 border border-slate-700 mb-3 flex items-center justify-center">
+                    <div
+                        class="h-16 rounded-lg bg-slate-900 border border-slate-700 mb-3 flex items-center justify-center">
                         <span class="font-mono text-xs text-slate-200">#0F172A</span>
                     </div>
                     <div class="text-xs font-bold text-slate-900 dark:text-white">Background Dark</div>
@@ -553,7 +725,8 @@
 
                 <!-- Color 2 -->
                 <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <div class="h-16 rounded-lg bg-amber-400 mb-3 flex items-center justify-center text-slate-950 font-bold">
+                    <div
+                        class="h-16 rounded-lg bg-amber-400 mb-3 flex items-center justify-center text-slate-950 font-bold">
                         <span class="font-mono text-xs">#FACC15</span>
                     </div>
                     <div class="text-xs font-bold text-slate-900 dark:text-white">Primary Marker</div>
@@ -562,7 +735,8 @@
 
                 <!-- Color 3 -->
                 <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <div class="h-16 rounded-lg bg-emerald-500 mb-3 flex items-center justify-center text-white font-bold">
+                    <div
+                        class="h-16 rounded-lg bg-emerald-500 mb-3 flex items-center justify-center text-white font-bold">
                         <span class="font-mono text-xs">#10B981</span>
                     </div>
                     <div class="text-xs font-bold text-slate-900 dark:text-white">Safety: High (상)</div>
@@ -581,9 +755,11 @@
         </section>
 
         <!-- Implementation Roadmap -->
-        <section id="roadmap" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="roadmap"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Roadmap</h2>
+                <h2 class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2">Roadmap
+                </h2>
                 <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">단계별 구현 로드맵</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">데이터 준비부터 웹 지도 애플리케이션 완료까지의 순차적 일정입니다.</p>
             </div>
@@ -591,19 +767,29 @@
             <div class="relative border-l-2 border-slate-300 dark:border-slate-800 ml-4 md:ml-32 space-y-8">
                 <!-- Step 1 -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-slate-50 dark:border-slate-900"></div>
-                    <div class="text-xs font-mono text-amber-600 dark:text-amber-400 font-bold uppercase mb-1">Step 01 • Data Engineering</div>
-                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">데이터 전처리 스크립트 작성 (<code class="text-amber-700 dark:text-amber-300">preprocess.py</code>)</h4>
+                    <div
+                        class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-slate-50 dark:border-slate-900">
+                    </div>
+                    <div class="text-xs font-mono text-amber-600 dark:text-amber-400 font-bold uppercase mb-1">Step 01 •
+                        Data Engineering</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">데이터 전처리 스크립트 작성 (<code
+                            class="text-amber-700 dark:text-amber-300">preprocess.py</code>)</h4>
                     <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
-                        CSV 파일 파싱, 어린이집 필터링, Haversine 반경 300m CCTV 연산 수행 및 웹용 <code class="text-slate-800 dark:text-slate-300">daycare_data.json</code> 정제 생성
+                        CSV 파일 파싱, 어린이집 필터링, Haversine 반경 300m CCTV 연산 수행 및 웹용 <code
+                            class="text-slate-800 dark:text-slate-300">daycare_data.json</code> 정제 생성
                     </p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900"></div>
-                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 02 • Frontend Setup</div>
-                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">웹 지도 UI 및 커스텀 마커 렌더링 (<code class="text-amber-700 dark:text-amber-300">index.html</code>, <code class="text-amber-700 dark:text-amber-300">app.js</code>)</h4>
+                    <div
+                        class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900">
+                    </div>
+                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 02 •
+                        Frontend Setup</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">웹 지도 UI 및 커스텀 마커 렌더링 (<code
+                            class="text-amber-700 dark:text-amber-300">index.html</code>, <code
+                            class="text-amber-700 dark:text-amber-300">app.js</code>)</h4>
                     <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
                         Leaflet 타일맵 로딩, 커스텀 마커 및 스쿨존 영역 레이어 토글 기능 구현
                     </p>
@@ -611,8 +797,11 @@
 
                 <!-- Step 3 -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900"></div>
-                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 03 • Interaction</div>
+                    <div
+                        class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900">
+                    </div>
+                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 03 •
+                        Interaction</div>
                     <h4 class="text-lg font-bold text-slate-900 dark:text-white">사이드바 실시간 필터 & 상세 모달 팝업 연동</h4>
                     <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
                         통학차량 Y/N 및 CCTV 10대 이상 필터링, 검색어 즉시 반사, 클릭 시 상세 팝업 바인딩
@@ -621,8 +810,11 @@
 
                 <!-- Step 4 -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900"></div>
-                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 04 • QA & Launch</div>
+                    <div
+                        class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900">
+                    </div>
+                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold uppercase mb-1">Step 04 •
+                        QA & Launch</div>
                     <h4 class="text-lg font-bold text-slate-900 dark:text-white">데이터 검증, 성능 최적화 및 최종 시계열 테스트</h4>
                     <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
                         대용량 마커 렌더링 성능 최적화(Marker Clustering 검토), 반응형 모바일 디바이스 지원 검증
@@ -632,34 +824,53 @@
         </section>
 
         <!-- Original PRD Full Document Viewer -->
-        <section id="full-prd" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="full-prd"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
             <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-300 dark:border-slate-700">
-                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+                <div
+                    class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">PRD 원문 텍스트 (Full Specification)</h3>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">PRD 원문 텍스트 (Full Specification)
+                        </h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400">제공된 요구사항 정의서 전문입니다.</p>
                     </div>
-                    <button id="togglePrdBtn" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition flex items-center">
+                    <button id="togglePrdBtn"
+                        class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition flex items-center">
                         <i class="fa-solid fa-chevron-up mr-1.5"></i><span id="toggleBtnText">접기</span>
                     </button>
                 </div>
 
-                <div id="prdContent" class="space-y-6 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-sans transition-all duration-300">
-                    <div class="bg-slate-100 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
-                        <h4 class="text-base font-bold text-amber-600 dark:text-amber-400"># PRD: 전국 어린이집 안전도 및 스쿨존 지도 서비스</h4>
-                        
+                <div id="prdContent"
+                    class="space-y-6 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-sans transition-all duration-300">
+                    <div
+                        class="bg-slate-100 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+                        <h4 class="text-base font-bold text-amber-600 dark:text-amber-400"># PRD: 전국 어린이집 안전도 및 스쿨존 지도
+                            서비스</h4>
+
                         <div class="space-y-2">
                             <h5 class="font-bold text-slate-900 dark:text-slate-200 text-sm">1. 프로젝트 개요</h5>
-                            <p class="text-slate-600 dark:text-slate-400">본 프로젝트는 <code class="text-amber-700 dark:text-amber-300">전국어린이집표준데이터.csv</code> 및 <code class="text-amber-700 dark:text-amber-300">전국어린이보호구역표준데이터.csv</code>를 기반으로, 전국 어린이집의 위치와 반경 300m 내 CCTV 설치 현황을 분석하여 안전도 등급을 시각화하고, 보호구역(스쿨존) 영역을 확인할 수 있는 웹 지도 애플리케이션을 제공합니다.</p>
+                            <p class="text-slate-600 dark:text-slate-400">본 프로젝트는 <code
+                                    class="text-amber-700 dark:text-amber-300">전국어린이집표준데이터.csv</code> 및 <code
+                                    class="text-amber-700 dark:text-amber-300">전국어린이보호구역표준데이터.csv</code>를 기반으로, 전국 어린이집의
+                                위치와 반경 300m 내 CCTV 설치 현황을 분석하여 안전도 등급을 시각화하고, 보호구역(스쿨존) 영역을 확인할 수 있는 웹 지도 애플리케이션을 제공합니다.
+                            </p>
                         </div>
 
                         <div class="space-y-2">
                             <h5 class="font-bold text-slate-900 dark:text-slate-200 text-sm">2. 주요 기능 및 요구사항</h5>
                             <ul class="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-                                <li class="text-slate-700 dark:text-slate-300"><strong class="text-amber-700 dark:text-amber-300">지도 마커 및 스쿨존 레이어 토글:</strong> 노란색 기본 마커, 우측 상단 레이어 ON/OFF 토글</li>
-                                <li class="text-slate-700 dark:text-slate-300"><strong class="text-amber-700 dark:text-amber-300">CCTV 반경 연산 및 안전도 등급:</strong> Haversine 300m 이내 합산 (상: 10대+, 중: 5~9대, 하: 5대 미만)</li>
-                                <li class="text-slate-700 dark:text-slate-300"><strong class="text-amber-700 dark:text-amber-300">사이드바 필터링 & 검색:</strong> 통학차량 여부, CCTV 10대 이상, 실시간 검색, 요약 통계 카드</li>
-                                <li class="text-slate-700 dark:text-slate-300"><strong class="text-amber-700 dark:text-amber-300">마커 클릭 상세 팝업:</strong> 어린이집명, 주소, 비상구, 소방점검일자, CCTV 수, 통학차량 여부</li>
+                                <li class="text-slate-700 dark:text-slate-300"><strong
+                                        class="text-amber-700 dark:text-amber-300">지도 마커 및 스쿨존 레이어 토글:</strong> 노란색 기본
+                                    마커, 우측 상단 레이어 ON/OFF 토글</li>
+                                <li class="text-slate-700 dark:text-slate-300"><strong
+                                        class="text-amber-700 dark:text-amber-300">CCTV 반경 연산 및 안전도 등급:</strong>
+                                    Haversine 300m 이내 합산 (상: 10대+, 중: 5~9대, 하: 5대 미만)</li>
+                                <li class="text-slate-700 dark:text-slate-300"><strong
+                                        class="text-amber-700 dark:text-amber-300">사이드바 필터링 & 검색:</strong> 통학차량 여부, CCTV
+                                    10대 이상, 실시간 검색, 요약 통계 카드</li>
+                                <li class="text-slate-700 dark:text-slate-300"><strong
+                                        class="text-amber-700 dark:text-amber-300">마커 클릭 상세 팝업:</strong> 어린이집명, 주소, 비상구,
+                                    소방점검일자, CCTV 수, 통학차량 여부</li>
                             </ul>
                         </div>
                     </div>
@@ -669,7 +880,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-950/80 py-8 text-center text-xs text-slate-500">
+    <footer
+        class="border-t border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-950/80 py-8 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto px-4">
             <p>Childcare Safety & School Zone Map — Product Requirements & Architectural Document</p>
             <p class="mt-1 text-[11px] text-slate-500 dark:text-slate-600">공공데이터 표준규격 기반 공간분석 기획안</p>
@@ -681,7 +893,7 @@
         // Theme Toggle Logic (Dark / Light Mode)
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const themeIcon = document.getElementById('themeIcon');
-        
+
         function setTheme(isLight) {
             if (isLight) {
                 document.documentElement.classList.remove('dark');
@@ -767,4 +979,5 @@
         });
     </script>
 </body>
+
 </html>
